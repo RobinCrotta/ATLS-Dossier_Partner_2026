@@ -1,0 +1,1507 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ATLS | Concetto Sponsoring</title>
+  <style>
+    :root {
+      --red: #b9201b;
+      --red-dark: #71110f;
+      --ink: #18120f;
+      --muted: #6f625b;
+      --paper: #fff9ef;
+      --cream: #f2dfc4;
+      --sand: #d0a56e;
+      --wood: #7a4b2b;
+      --green: #24392d;
+      --blue: #23384d;
+      --line: rgba(24, 18, 15, .14);
+      --shadow: 0 22px 60px rgba(42, 20, 10, .18);
+      --max: 1360px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.55;
+    }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+    button, summary { font: inherit; }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      min-height: 72px;
+      padding: 10px clamp(18px, 4vw, 54px);
+      background: rgba(255, 249, 239, .88);
+      border-bottom: 1px solid var(--line);
+      backdrop-filter: blur(18px);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: .02em;
+      color: var(--red-dark);
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav a, .print-btn {
+      border: 1px solid transparent;
+      border-radius: 999px;
+      padding: 9px 12px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      background: transparent;
+      cursor: pointer;
+    }
+
+    .nav a:hover, .print-btn:hover {
+      color: var(--red-dark);
+      border-color: var(--line);
+      background: white;
+    }
+
+    .hero {
+      position: relative;
+      min-height: calc(100svh - 72px);
+      display: grid;
+      align-items: end;
+      padding: clamp(28px, 6vw, 78px);
+      color: white;
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(18, 12, 8, .74), rgba(18, 12, 8, .20) 52%, rgba(18, 12, 8, .46)),
+        linear-gradient(0deg, rgba(18, 12, 8, .72), transparent 52%),
+        url("output/hero-copertina-16x9.jpg") center / cover;
+      z-index: -2;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: radial-gradient(rgba(255, 255, 255, .12) 1px, transparent 1px);
+      background-size: 16px 16px;
+      opacity: .28;
+      z-index: -1;
+    }
+
+    .hero-inner {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: clamp(24px, 4vw, 58px);
+      align-items: end;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--red);
+      font-size: 12px;
+      font-weight: 950;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .hero .eyebrow { color: #ffd28c; }
+
+    h1, h2, h3, p { margin-top: 0; }
+
+    h1 {
+      max-width: 900px;
+      margin-bottom: 18px;
+      font-size: clamp(48px, 9vw, 118px);
+      line-height: .89;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h2 {
+      margin-bottom: 18px;
+      font-size: clamp(30px, 4vw, 56px);
+      line-height: 1;
+      letter-spacing: 0;
+    }
+
+    h3 {
+      margin-bottom: 8px;
+      font-size: 22px;
+      line-height: 1.15;
+    }
+
+    .lead {
+      max-width: 820px;
+      color: rgba(255, 255, 255, .88);
+      font-size: clamp(18px, 2.1vw, 25px);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      border-radius: 999px;
+      padding: 12px 18px;
+      font-weight: 900;
+      border: 1px solid rgba(255, 255, 255, .25);
+    }
+
+    .btn.primary {
+      background: var(--red);
+      color: white;
+      border-color: var(--red);
+    }
+
+    .btn.light {
+      background: white;
+      color: var(--ink);
+    }
+
+    .btn.ghost {
+      color: white;
+      background: rgba(255, 255, 255, .08);
+    }
+
+    section {
+      padding: clamp(58px, 8vw, 112px) clamp(18px, 4vw, 54px);
+    }
+
+    .wrap {
+      width: min(100%, var(--max));
+      margin: 0 auto;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(260px, .65fr);
+      gap: clamp(22px, 5vw, 78px);
+      align-items: end;
+      margin-bottom: 36px;
+    }
+
+    .section-head p, .copy p { color: var(--muted); }
+
+    .band-red {
+      color: white;
+      background:
+        linear-gradient(135deg, rgba(113, 17, 15, .96), rgba(36, 57, 45, .94)),
+        url("output/evento-festa-4x3.jpg") center / cover fixed;
+    }
+
+    .band-red .eyebrow, .band-dark .eyebrow { color: #ffd28c; }
+    .band-red p, .band-dark p { color: rgba(255, 255, 255, .78); }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(285px, 1fr));
+      gap: 18px;
+    }
+
+    .grid-4 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, .72);
+      padding: 24px;
+      box-shadow: 0 12px 30px rgba(42, 20, 10, .06);
+      min-width: 0;
+      overflow-wrap: break-word;
+    }
+
+    .card.dark {
+      color: white;
+      border-color: rgba(255, 255, 255, .16);
+      background: rgba(255, 255, 255, .09);
+    }
+
+    .card .num {
+      display: block;
+      margin-bottom: 16px;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .card.dark .num { color: #ffd28c; }
+
+    .identity-cards .card {
+      min-height: 310px;
+      padding: clamp(28px, 4vw, 44px);
+      background: white;
+      border-top: 7px solid var(--red);
+    }
+
+    .identity-cards h3 {
+      font-size: clamp(27px, 2.6vw, 42px);
+      line-height: .98;
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: minmax(430px, .95fr) minmax(460px, 1fr);
+      gap: clamp(24px, 5vw, 76px);
+      align-items: center;
+    }
+
+    .photo-stack {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .photo-stack img, .wide-photo img, .member-photo, .sponsor-logo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .member-photo {
+      aspect-ratio: 4 / 5;
+      object-fit: contain;
+      padding: 18px;
+      background: #f3e4d0;
+    }
+
+    .photo-stack img {
+      aspect-ratio: 1 / 1.1;
+      box-shadow: var(--shadow);
+    }
+
+    .photo-stack img:nth-child(2) {
+      margin-top: 38px;
+    }
+
+    .wide-photo {
+      overflow: hidden;
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow);
+    }
+
+    .wide-photo img {
+      aspect-ratio: 16 / 8.5;
+    }
+
+    #arena .split {
+      grid-template-columns: minmax(0, 1fr);
+    }
+
+    #arena .copy-wide {
+      max-width: 980px;
+    }
+
+    #arena .wide-photo img {
+      aspect-ratio: 16 / 7.4;
+    }
+
+    .arena-showcase {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(340px, .95fr);
+      gap: 18px;
+      align-items: stretch;
+      margin-top: 30px;
+    }
+
+    .arena-showcase .wide-photo {
+      min-height: 100%;
+    }
+
+    .arena-showcase figcaption {
+      padding: 13px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 800;
+      background: white;
+      border-top: 1px solid var(--line);
+    }
+
+    .arena-photo-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+    }
+
+    .arena-photo-card {
+      margin: 0;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .arena-photo-card.featured {
+      grid-column: 1 / -1;
+    }
+
+    .arena-photo-card img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+    }
+
+    .arena-photo-card:not(.featured) img {
+      aspect-ratio: 4 / 3;
+    }
+
+    .arena-map {
+      grid-column: 1 / -1;
+      display: grid;
+      grid-template-columns: minmax(280px, .72fr) minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: var(--shadow);
+    }
+
+    .arena-map-copy {
+      padding: clamp(22px, 3vw, 36px);
+      background:
+        linear-gradient(135deg, rgba(113, 17, 15, .96), rgba(36, 57, 45, .94));
+      color: white;
+    }
+
+    .arena-map-copy .eyebrow { color: #ffd28c; }
+    .arena-map-copy p { color: rgba(255, 255, 255, .80); }
+
+    .arena-map iframe {
+      width: 100%;
+      min-height: 420px;
+      border: 0;
+      filter: saturate(.9) contrast(.96);
+    }
+
+    .ad-visual {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 360px;
+      gap: 24px;
+      align-items: center;
+      margin-bottom: 28px;
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 16px 44px rgba(42, 20, 10, .08);
+    }
+
+    .ad-visual img {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: contain;
+      background: #f7ead7;
+    }
+
+    .package .ad-visual {
+      grid-template-columns: 1fr;
+      gap: 14px;
+      margin: 18px 0;
+      padding: 16px;
+      box-shadow: none;
+    }
+
+    .package .ad-visual h3 {
+      font-size: 20px;
+      line-height: 1.15;
+    }
+
+    .timeline {
+      display: grid;
+      gap: 14px;
+      counter-reset: item;
+    }
+
+    .timeline article {
+      counter-increment: item;
+      display: grid;
+      grid-template-columns: 74px minmax(0, 1fr);
+      gap: 18px;
+      align-items: start;
+      padding: 18px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .timeline article::before {
+      content: counter(item, decimal-leading-zero);
+      color: var(--red);
+      font-weight: 950;
+      font-size: 22px;
+    }
+
+    .numbers {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .metric {
+      padding: 24px;
+      color: white;
+      background: var(--ink);
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .metric:nth-child(2) { background: var(--red-dark); }
+    .metric:nth-child(3) { background: var(--green); }
+    .metric:nth-child(4) { background: var(--blue); }
+
+    .metric strong {
+      font-size: clamp(38px, 5vw, 66px);
+      line-height: .9;
+    }
+
+    .metric span {
+      color: rgba(255, 255, 255, .78);
+      font-weight: 750;
+    }
+
+    .people-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 16px;
+    }
+
+    .person {
+      border: 1px solid var(--line);
+      background: white;
+      overflow: hidden;
+    }
+
+    .portrait-placeholder {
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      color: rgba(255, 255, 255, .74);
+      text-align: center;
+      font-weight: 900;
+      background:
+        linear-gradient(135deg, rgba(113, 17, 15, .9), rgba(35, 56, 77, .9)),
+        radial-gradient(circle at 30% 20%, rgba(255, 210, 140, .35), transparent 30%);
+    }
+
+    .person-body {
+      padding: 16px;
+    }
+
+    .person small {
+      display: block;
+      color: var(--red);
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .team-area {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 330px;
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .quote-box {
+      padding: 26px;
+      color: white;
+      background: var(--red-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+
+    .package {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 18px 44px rgba(42, 20, 10, .08);
+      overflow: hidden;
+      min-width: 0;
+    }
+
+    .package-head,
+    .package header {
+      padding: 22px;
+      color: white;
+      background: var(--ink);
+      list-style: none;
+      cursor: pointer;
+      display: block;
+    }
+
+    .package-head::-webkit-details-marker { display: none; }
+
+    .package-head::after {
+      content: "Apri dettagli";
+      display: inline-flex;
+      margin-top: 16px;
+      padding: 8px 12px;
+      border: 1px solid rgba(255, 255, 255, .32);
+      border-radius: 999px;
+      color: rgba(255, 255, 255, .9);
+      font-size: 13px;
+      font-weight: 900;
+    }
+
+    .package[open] .package-head::after {
+      content: "Chiudi dettagli";
+    }
+
+    .package-head h3,
+    .package-head p {
+      margin: 0;
+      padding: 0;
+    }
+
+    .package-head p {
+      margin-top: 10px;
+      color: rgba(255, 255, 255, .82);
+      font-weight: 750;
+    }
+
+    .package.main .package-head,
+    .package.main header { background: var(--red-dark); }
+    .package.standard .package-head,
+    .package.standard header { background: var(--green); }
+    .package.supporter .package-head,
+    .package.supporter header { background: var(--blue); }
+
+    .price {
+      display: block;
+      margin-top: 12px;
+      font-size: clamp(25px, 3.2vw, 36px);
+      line-height: 1;
+      font-weight: 950;
+      overflow-wrap: break-word;
+    }
+
+    .package-body {
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      flex: 1;
+    }
+
+    .package ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+    }
+
+    .package-details { color: var(--muted); }
+
+    .package .package-details p,
+    .package .note {
+      padding: 0;
+      margin: 0;
+    }
+
+    .package-lead {
+      margin-bottom: 18px;
+      color: var(--muted);
+      font-weight: 750;
+    }
+
+    .benefit-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .benefit-grid details {
+      border: 1px solid rgba(24, 18, 15, .12);
+      background: rgba(255, 249, 239, .82);
+      box-shadow: none;
+    }
+
+    .benefit-grid summary {
+      padding: 14px 16px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .benefit-grid details p {
+      padding: 0 16px 16px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .esv-visual {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin: 12px 0;
+    }
+
+    .esv-garment {
+      position: relative;
+      min-height: 210px;
+      border: 1px solid rgba(24, 18, 15, .12);
+      background:
+        linear-gradient(145deg, #f8efe2, #ffffff);
+      overflow: hidden;
+    }
+
+    .esv-garment::before {
+      content: "";
+      position: absolute;
+      inset: 32px 48px 18px;
+      background:
+        linear-gradient(90deg, transparent 46%, rgba(24, 18, 15, .12) 48%, transparent 52%),
+        linear-gradient(160deg, #2c3f55, #111820);
+      clip-path: polygon(23% 0, 42% 0, 50% 15%, 58% 0, 77% 0, 92% 26%, 79% 41%, 79% 100%, 21% 100%, 21% 41%, 8% 26%);
+      box-shadow: 0 16px 30px rgba(24, 18, 15, .16);
+    }
+
+    .cap::before {
+      inset: 66px 44px 70px;
+      background: #111820;
+      clip-path: ellipse(42% 30% at 50% 50%);
+    }
+
+    .cap::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 108px;
+      width: 82px;
+      height: 22px;
+      background: #111820;
+      border-radius: 0 0 80% 80%;
+      transform: translateX(-50%);
+    }
+
+    .logo-slot {
+      position: absolute;
+      z-index: 2;
+      display: grid;
+      place-items: center;
+      width: 56px;
+      height: 42px;
+      border: 2px dashed #ffd28c;
+      color: white;
+      background: rgba(185, 32, 27, .78);
+      font-size: 10px;
+      font-weight: 950;
+      text-align: center;
+    }
+
+    .slot-a { left: 70px; top: 82px; }
+    .slot-b { right: 70px; top: 82px; }
+    .slot-c { left: calc(50% - 28px); top: 138px; }
+    .slot-cap { left: calc(50% - 30px); top: 82px; width: 60px; height: 36px; }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .event-card {
+      min-height: 260px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 22px;
+      color: white;
+      background:
+        linear-gradient(0deg, rgba(0, 0, 0, .74), rgba(0, 0, 0, .18)),
+        var(--event-img) center / cover;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .event-card strong {
+      font-size: 30px;
+      line-height: 1;
+    }
+
+    .event-card span {
+      color: rgba(255, 255, 255, .78);
+      font-weight: 800;
+    }
+
+    .note {
+      border-left: 4px solid var(--red);
+      padding: 14px 16px;
+      background: rgba(185, 32, 27, .08);
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .accordion {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    details {
+      border: 1px solid var(--line);
+      background: white;
+      box-shadow: 0 10px 26px rgba(42, 20, 10, .05);
+    }
+
+    summary {
+      list-style: none;
+      cursor: pointer;
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      font-weight: 950;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      color: var(--red);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    details[open] summary::after { content: "-"; }
+
+    details p {
+      margin: 0;
+      padding: 0 20px 20px;
+      color: var(--muted);
+    }
+
+    .band-dark {
+      color: white;
+      background:
+        linear-gradient(120deg, rgba(24, 18, 15, .96), rgba(35, 56, 77, .92)),
+        url("output/evento-rsi-tv-4x3.jpg") center / cover;
+    }
+
+    .social-grid {
+      display: grid;
+      grid-template-columns: minmax(440px, 1.1fr) minmax(360px, .9fr);
+      gap: 22px;
+      align-items: stretch;
+    }
+
+    .insta-card {
+      min-height: 420px;
+      display: grid;
+      align-content: end;
+      padding: 28px;
+      color: white;
+      background:
+        linear-gradient(0deg, rgba(0, 0, 0, .74), rgba(0, 0, 0, .12)),
+        url("output/social-instagram-4x5.jpg") center / cover;
+      box-shadow: var(--shadow);
+    }
+
+    .source-list {
+      display: grid;
+      gap: 8px;
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      color: rgba(255, 255, 255, .76);
+      font-size: 14px;
+    }
+
+    footer {
+      padding: 34px clamp(18px, 4vw, 54px);
+      color: rgba(255, 255, 255, .72);
+      background: var(--ink);
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .6s ease, transform .6s ease;
+    }
+
+    .reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    @media (max-width: 980px) {
+      .hero-inner, .section-head, .split, .team-area, .social-grid, .ad-visual, .arena-showcase, .arena-map {
+        grid-template-columns: 1fr;
+      }
+
+      .grid-3, .grid-4, .packages, .numbers, .event-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .people-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .nav { display: none; }
+    }
+
+    @media (max-width: 640px) {
+      .hero {
+        min-height: 760px;
+        padding-inline: 18px;
+      }
+
+      .grid-3, .grid-4, .packages, .numbers, .people-grid, .accordion, .event-grid, .esv-visual, .arena-photo-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .arena-photo-card.featured {
+        grid-column: auto;
+      }
+
+      .photo-stack {
+        grid-template-columns: 1fr;
+      }
+
+      .photo-stack img:nth-child(2) {
+        margin-top: 0;
+      }
+
+      .timeline article {
+        grid-template-columns: 44px minmax(0, 1fr);
+      }
+
+      .topbar {
+        align-items: flex-start;
+      }
+    }
+
+    @media print {
+      .topbar, .hero-actions, .print-btn { display: none; }
+      body { background: white; }
+      section, .hero { page-break-inside: avoid; padding: 32px 0; }
+      .hero { min-height: auto; color: var(--ink); }
+      .hero::before, .hero::after { display: none; }
+      .lead, .band-red p, .band-dark p { color: var(--muted); }
+      .band-red, .band-dark, footer { background: white; color: var(--ink); }
+      .card.dark, .metric, .quote-box, .package header, .package-head { color: var(--ink); background: white; border: 1px solid var(--line); }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="#top" aria-label="Torna alla copertina">
+      <img src="output/logo-atls.png" alt="Logo ATLS">
+      <span>ATLS Sponsoring</span>
+    </a>
+    <nav class="nav" aria-label="Navigazione">
+      <a href="#chi-siamo">Chi siamo</a>
+      <a href="#storia">Storia</a>
+      <a href="#arena">CMFG Arena</a>
+      <a href="#numeri">Numeri</a>
+      <a href="#pacchetti">Pacchetti</a>
+      <a href="#visibilita">Visibilita</a>
+      <a href="#contatto">Contatto</a>
+      <button class="print-btn" type="button" onclick="window.print()">Stampa PDF</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <p class="eyebrow">Concetto sponsoring 2026-2030</p>
+          <h1>Tradizione, forza e rispetto.</h1>
+          <p class="lead">Una proposta per aziende e partner che vogliono accompagnare la crescita della lotta svizzera in Ticino: giovani, territorio, eventi, comunicazione e un nuovo locale alla CMFG Arena.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#pacchetti">Scopri i pacchetti</a>
+            <a class="btn light" href="#visibilita">Vedi la visibilita</a>
+            <a class="btn ghost" href="https://www.instagram.com/lottasvizzeraticino/" target="_blank" rel="noreferrer">Instagram ATLS</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="chi-siamo" class="reveal">
+      <div class="wrap section-head">
+        <div>
+          <p class="eyebrow">Associazione</p>
+          <h2>Lotta svizzera in Ticino, con radici solide e una visione nuova.</h2>
+        </div>
+        <p>L'Associazione Ticinese di Lotta Svizzera rappresenta questo sport nazionale nel Canton Ticino. E membro dell'Innerschweizer Schwingerverband e dell'Associazione federale di lotta svizzera. Il nostro compito e promuovere la disciplina, trasmetterne i valori e creare occasioni concrete per giovani, atleti, famiglie e partner.</p>
+      </div>
+      <div class="wrap grid-3 identity-cards">
+        <article class="card">
+          <span class="num">Visione</span>
+          <h3>Un punto di riferimento stabile entro il 2030.</h3>
+          <p>Vogliamo rendere la lotta svizzera piu conosciuta, accessibile e riconoscibile in Ticino, con un locale adeguato, un gruppo sportivo attivo e una comunicazione professionale.</p>
+        </article>
+        <article class="card">
+          <span class="num">Missione</span>
+          <h3>Far crescere persone, non solo risultati.</h3>
+          <p>Allenamenti, dimostrazioni, feste, attivita con scuole e aziende: ATLS crea esperienze in cui forza, tecnica e fair play diventano educazione concreta.</p>
+        </article>
+        <article class="card">
+          <span class="num">Valori</span>
+          <h3>Tradizione, forza, rispetto.</h3>
+          <p>Tre parole semplici che definiscono il nostro modo di presentarci: fedeli alle radici svizzere, seri nel lavoro sportivo, corretti nel rapporto con avversari e partner.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="storia" class="band-red reveal">
+      <div class="wrap split">
+        <div class="copy">
+          <p class="eyebrow">Da una prova a un movimento</p>
+          <h2>Una storia iniziata nella segatura, cresciuta con pazienza.</h2>
+          <p>Tra il 2009 e il 2011, alla Sportissima di Tenero, Edi Ritter e il club di Erstfeld hanno portato lezioni di prova che hanno acceso l'interesse dei giovani ticinesi. Nel 2012 quattro giovani lottatori ticinesi erano gia assicurati e partecipavano a feste ISV; il 13 agosto 2012 nasceva ufficialmente l'associazione a Camorino.</p>
+          <p>Per anni ci siamo allenati in condizioni semplici, anche in un garage nella zona industriale di Contone. Quella fase racconta bene il carattere ATLS: poche comodita, tanta volonta, un gruppo disposto a costruire un futuro sportivo quasi da zero.</p>
+        </div>
+        <div class="photo-stack">
+          <img src="output/storia-garage-4x5.jpg" alt="Primo locale di allenamento ATLS">
+          <img src="output/storia-articolo-4x5.jpg" alt="Articolo storico sulla lotta svizzera in Ticino">
+        </div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap timeline">
+        <article>
+          <div>
+            <h3>2009-2011: prime prove al CST Tenero</h3>
+            <p>Sportissima porta la lotta svizzera davanti a bambini, famiglie e adulti. Nasce la curiosita per una disciplina quasi assente a sud delle Alpi.</p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h3>2012: fondazione ATLS</h3>
+            <p>Il 13 agosto 2012 viene fondata l'associazione cantonale ticinese. Da qui iniziano assicurazione federale, gare nel territorio ISV e costruzione della rete associativa.</p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h3>2022: prima Festa Cantonale Ticinese</h3>
+            <p>A Cadenazzo si tiene la prima festa cantonale con incoronazione: oltre 200 partecipanti e un segnale forte per lo sviluppo della disciplina in Ticino.</p>
+          </div>
+        </article>
+        <article>
+          <div>
+            <h3>2025: seconda Festa Cantonale a Biasca</h3>
+            <p>Circa 5000 spettatori, 200 lottatori della regione ISV, 9 ticinesi in gara e una diretta RSI di 8 ore con share del 25%: una vetrina importante per sport, territorio e partner.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap section-head">
+        <div>
+          <p class="eyebrow">Eventi, media, Svizzera centrale</p>
+          <h2>La visibilita ATLS non resta chiusa in Ticino.</h2>
+        </div>
+        <p>Essere partner ATLS significa apparire in un contesto sportivo che vive tra Ticino e Svizzera centrale: gare, assemblee, riunioni, feste e collaborazioni portano il nome dell'associazione oltre il cantone.</p>
+      </div>
+      <div class="wrap event-grid">
+        <article class="event-card" style="--event-img: url('output/evento-festa-4x3.jpg')">
+          <span>Festa cantonale</span>
+          <strong>5000 spettatori</strong>
+          <p>Ogni tre anni la festa cantonale crea una piattaforma forte per pubblico, sponsor, autorita e tradizione.</p>
+        </article>
+        <article class="event-card" style="--event-img: url('output/evento-rsi-tv-4x3.jpg')">
+          <span>RSI e TV</span>
+          <strong>8 ore live</strong>
+          <p>La festa 2025 ha avuto una diretta RSI di 8 ore e uno share del 25%, portando la lotta svizzera nelle case.</p>
+        </article>
+        <article class="event-card" style="--event-img: url('output/evento-media-giornali-4x3.jpg')">
+          <span>Media e giornali</span>
+          <strong>Articoli e servizi</strong>
+          <p>ATLS genera storie autentiche: crescita, giovani, tradizione, volontariato e ritorno della lotta svizzera in Ticino.</p>
+        </article>
+        <article class="event-card" style="--event-img: url('output/evento-social-4x3.jpg')">
+          <span>Social</span>
+          <strong>20k+ view</strong>
+          <p>Post condivisi con RSI Sport su Instagram possono superare le 20'000 visualizzazioni e ampliare il pubblico sponsor.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="arena" class="reveal">
+      <div class="wrap split">
+        <div class="copy-wide">
+          <p class="eyebrow">Nuovo progetto</p>
+          <h2>Il nuovo locale alla CMFG Arena: una casa per allenarsi, crescere e incontrarsi.</h2>
+          <p>Il prossimo salto di qualita e il nuovo locale di lotta alla <a href="https://cmfgarena.ch/" target="_blank" rel="noreferrer">CMFG Arena</a>. Non solo un campo di segatura, ma un luogo riconoscibile per allenamenti regolari, presentazioni sponsor, corsi aziendali, dimostrazioni, contenuti social e incontri con la comunita.</p>
+          <p>La CMFG Arena e perfetta per lo sviluppo della lotta svizzera perche e un centro polisportivo moderno, con palestra, ristorazione, sale per eventi e riunioni, parcheggi e spazi pensati per sport, formazione e socialita. Per uno sport ancora giovane in Ticino, avere una casa chiara significa rendere piu semplice invitare ragazzi, famiglie, aziende, media e partner.</p>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Allenamenti</h3>
+              <p>Continuita per attivi e giovani, con spazio dedicato e identita ATLS visibile.</p>
+            </article>
+            <article class="card">
+              <h3>Aziende</h3>
+              <p>Esperienze di team building e introduzioni alla lotta svizzera per partner e collaboratori.</p>
+            </article>
+            <article class="card">
+              <h3>Comunicazione</h3>
+              <p>Contenuti foto/video, menzioni sponsor e storytelling piu costante durante l'anno.</p>
+            </article>
+          </div>
+        </div>
+        <div class="arena-showcase">
+          <figure class="wide-photo">
+            <img src="output/cmfg-arena-render-16x9.png" alt="Rendering nuovo locale di lotta a Sigirino">
+            <figcaption>Visione del nuovo campo di lotta: una base riconoscibile per allenamenti, partner e contenuti.</figcaption>
+          </figure>
+          <div class="arena-photo-grid">
+            <figure class="arena-photo-card featured">
+              <img src="output/arena-allestimento-cmfg.jpg" alt="Locale ATLS alla CMFG Arena in fase di allestimento">
+              <figcaption>Il locale reale in allestimento alla CMFG Arena: qui il progetto inizia a prendere forma.</figcaption>
+            </figure>
+            <figure class="arena-photo-card">
+              <img src="output/storia-garage-4x5.jpg" alt="Primo locale storico ATLS">
+              <figcaption>Dalle prime soluzioni semplici a una casa sportiva stabile.</figcaption>
+            </figure>
+            <figure class="arena-photo-card">
+              <img src="output/giovani-lottatori-16x9.jpg" alt="Giovani lottatori ATLS">
+              <figcaption>Uno spazio pensato soprattutto per giovani, famiglie e continuita.</figcaption>
+            </figure>
+          </div>
+          <article class="arena-map">
+            <div class="arena-map-copy">
+              <p class="eyebrow">Dove siamo</p>
+              <h3>CMFG Arena, Sigirino.</h3>
+              <p>Il segnaposto rende immediata la visita: un partner capisce subito dove nasce il progetto, dove si potranno organizzare incontri e dove sara visibile il suo sostegno.</p>
+              <p><a class="btn light" href="https://www.google.com/maps/search/?api=1&query=CMFG%20Arena%20Sigirino" target="_blank" rel="noreferrer">Apri in Google Maps</a></p>
+            </div>
+            <iframe title="Mappa Google della CMFG Arena a Sigirino" src="https://www.google.com/maps?q=CMFG%20Arena%20Sigirino&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="numeri" class="reveal">
+      <div class="wrap section-head">
+        <div>
+          <p class="eyebrow">Associazione in numeri</p>
+          <h2>Una base piccola nello sport, forte nella comunita.</h2>
+        </div>
+        <p>Dati indicativi da rapporto annuale e materiali ATLS. I numeri possono essere aggiornati prima dell'invio ufficiale ai partner.</p>
+      </div>
+      <div class="wrap numbers">
+        <div class="metric"><strong>6</strong><span>Membri di comitato</span></div>
+        <div class="metric"><strong>10</strong><span>Lottatori attivi tesserati nel 2026</span></div>
+        <div class="metric"><strong>3</strong><span>Giovani lottatori tesserati nel 2026</span></div>
+        <div class="metric"><strong>243+</strong><span>Membri passivi e sostenitori</span></div>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap section-head">
+        <div>
+          <p class="eyebrow">Comitato</p>
+          <h2>Le persone che tengono insieme progetto, sport e territorio.</h2>
+        </div>
+        <p>Ogni riquadro e pronto per ricevere una foto ritratto e una descrizione personale piu precisa.</p>
+      </div>
+      <div class="wrap people-grid">
+        <article class="person">
+          <img class="member-photo" src="output/comitato-loris-dipietro-4x5.png" alt="Ritratto Loris Di Pietro">
+          <div class="person-body">
+            <small>Presidente</small>
+            <h3>Loris Di Pietro</h3>
+            <p>Guida associativa, rappresentanza istituzionale e sviluppo strategico.</p>
+          </div>
+        </article>
+        <article class="person">
+          <img class="member-photo" src="output/comitato-paolo-donelli-4x5.png" alt="Ritratto Paolo Donelli">
+          <div class="person-body">
+            <small>Vice presidente</small>
+            <h3>Paolo Donelli</h3>
+            <p>Supporto al presidente, coordinamento interno e presenza territoriale.</p>
+          </div>
+        </article>
+        <article class="person">
+          <img class="member-photo" src="output/comitato-ruth-crotta-4x5.png" alt="Ritratto Ruth Crotta">
+          <div class="person-body">
+            <small>Segretaria</small>
+            <h3>Ruth Crotta</h3>
+            <p>Gestione amministrativa, contatti membri e continuita associativa.</p>
+          </div>
+        </article>
+        <article class="person">
+          <img class="member-photo" src="output/comitato-robin-crotta-4x5.png" alt="Ritratto Robin Crotta">
+          <div class="person-body">
+            <small>Responsabile tecnico</small>
+            <h3>Robin Crotta</h3>
+            <p>Allenamenti, sviluppo sportivo e accompagnamento dei lottatori.</p>
+          </div>
+        </article>
+        <article class="person">
+          <img class="member-photo" src="output/comitato-oscar-facchini-4x5.png" alt="Ritratto Oscar Facchini">
+          <div class="person-body">
+            <small>Membro comitato</small>
+            <h3>Oscar Facchini</h3>
+            <p>Supporto operativo, deleghe e presenza negli appuntamenti associativi.</p>
+          </div>
+        </article>
+        <article class="person">
+          <img class="member-photo" src="output/comitato-boris-baroni-4x5.png" alt="Ritratto Boris Baroni">
+          <div class="person-body">
+            <small>Responsabile sviluppo</small>
+            <h3>Boris Baroni</h3>
+            <p>Sviluppo progetto, nuove partnership e crescita della rete ATLS.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap team-area">
+        <figure class="wide-photo">
+          <img src="output/lottatori-gruppo-16x9.jpg" alt="Foto di gruppo ATLS">
+        </figure>
+        <aside class="quote-box">
+          <div>
+            <p class="eyebrow">Lottatori</p>
+            <h2>Spazio foto gruppo.</h2>
+            <p>Questa sezione puo accogliere una foto ufficiale della squadra, nomi, categorie e brevi profili sportivi. L'obiettivo e mostrare ai partner chi sostengono concretamente.</p>
+          </div>
+          <strong>Attivi, giovani, volontari e sostenitori: una sola comunita.</strong>
+        </aside>
+      </div>
+    </section>
+
+    <section class="reveal">
+      <div class="wrap team-area">
+        <figure class="wide-photo">
+          <img src="output/giovani-lottatori-16x9.jpg" alt="Giovani lottatori ATLS">
+        </figure>
+        <aside class="quote-box">
+          <div>
+            <p class="eyebrow">Giovani tesserati</p>
+            <h2>Nel 2026: 10 attivi e 3 giovani.</h2>
+            <p>Il gruppo sportivo sta tornando a crescere. I 3 giovani tesserati sono un segnale importante: per ATLS il futuro passa da allenamenti regolari, accompagnamento tecnico e un locale dove i ragazzi possano sentirsi parte di qualcosa.</p>
+          </div>
+          <strong>Per uno sponsor, sostenere i giovani significa finanziare continuita, non solo visibilita.</strong>
+        </aside>
+      </div>
+    </section>
+
+    <section id="pacchetti" class="reveal">
+      <div class="wrap section-head">
+        <div>
+          <p class="eyebrow">Proposta sponsoring</p>
+          <h2>Pacchetti semplici, scalabili e pensati per durare.</h2>
+        </div>
+        <p>La logica principale e costruire partnership pluriennali per dare stabilita al progetto e ridurre la necessita di rifare abbigliamento e materiali ogni anno.</p>
+      </div>
+      <div class="wrap packages">
+        <details class="package main" open>
+          <summary class="package-head">
+            <h3>Main Partner</h3>
+            <span class="price">CHF 5'000 / anno</span>
+            <p>3 partner principali + eventuale quarto sul cappellino.</p>
+          </summary>
+          <div class="package-body">
+            <div class="package-details">
+              <p class="package-lead">Visibilita diretta inclusa nel pacchetto principale. Ogni blocco puo essere completato con dettagli, frequenza, esempi e condizioni.</p>
+              <div class="esv-visual" aria-label="Schema visuale superfici sponsor">
+                <div class="esv-garment">
+                  <span class="logo-slot slot-a">30 cm2</span>
+                  <span class="logo-slot slot-b">30 cm2</span>
+                  <span class="logo-slot slot-c">30 cm2</span>
+                </div>
+                <div class="esv-garment cap">
+                  <span class="logo-slot slot-cap">30 cm2</span>
+                </div>
+              </div>
+              <div class="ad-visual">
+                <div>
+                  <p class="eyebrow">Mockup spazi sponsor</p>
+                  <h3>Immagine sostituibile per mostrare loghi, capi e posizioni.</h3>
+                  <p>File: <strong>output/posti-pubblicitari-schema-16x9.png</strong>. Puoi sostituirlo con un mockup reale di giacca, polo, cappellino, parete palestra o altro materiale.</p>
+                </div>
+                <img src="output/posti-pubblicitari-schema-16x9.png" alt="Schema spazi pubblicitari sponsor ATLS">
+              </div>
+              <div class="benefit-grid">
+                <details open>
+                  <summary>Logo giacca e polo ufficiali</summary>
+                  <p>3 spazi logo da 30 cm2 sui capi ufficiali ATLS ammessi dal regolamento ESV. Pensato per dare ai Main Partner una presenza stabile e riconoscibile durante allenamenti, trasferte, eventi e momenti associativi.</p>
+                </details>
+                <details>
+                  <summary>Logo cappellino</summary>
+                  <p>1 spazio da 30 cm2 sul cappellino per un eventuale quarto partner. Da coordinare con colore, posizione e concetto abbigliamento prima della produzione.</p>
+                </details>
+                <details>
+                  <summary>Presenza sito premium</summary>
+                  <p>Logo, link, descrizione azienda e posizione prioritaria nella pagina partner ATLS. Il partner puo essere collegato anche da articoli, news o pagine progetto.</p>
+                </details>
+                <details>
+                  <summary>Post sponsor dedicati</summary>
+                  <p>Post ATLS personalizzati per raccontare il partner, il motivo della collaborazione e il valore concreto dato alla crescita della lotta svizzera in Ticino.</p>
+                </details>
+                <details>
+                  <summary>Stories Instagram e Facebook</summary>
+                  <p>Menzioni nelle stories durante allenamenti, gare, preparazione eventi, visite partner e contenuti dietro le quinte.</p>
+                </details>
+                <details>
+                  <summary>Materiali ufficiali ATLS</summary>
+                  <p>Logo su inviti, calendario, comunicazioni ufficiali, materiali per sponsor e presentazioni istituzionali dove coerente.</p>
+                </details>
+                <details>
+                  <summary>Menzione palestra CMFG Arena</summary>
+                  <p>Possibile presenza visiva nel nuovo locale di lotta, ad esempio parete partner, targa o pannello coordinato con l'identita ATLS.</p>
+                </details>
+                <details>
+                  <summary>Biglietti e ospitalita eventi</summary>
+                  <p>Inviti e accessi a eventi selezionati, feste e momenti associativi, secondo disponibilita e regolamenti organizzativi.</p>
+                </details>
+              </div>
+              <p class="note">Contratto consigliato: 3 anni. Secondo regolamento ESV la pubblicita non e ammessa sul tenue di gara, sugli abiti di premiazione e durante il combattimento; ogni applicazione va validata prima della produzione.</p>
+            </div>
+          </div>
+        </details>
+        <details class="package standard">
+          <summary class="package-head">
+            <h3>Sponsor Partner</h3>
+            <span class="price">CHF 1'000-3'000 / anno</span>
+            <p>Visibilita media e contratto annuale.</p>
+          </summary>
+          <div class="package-body">
+            <div class="package-details">
+              <p class="package-lead">Visibilita diretta per aziende che vogliono sostenere ATLS con una presenza regolare durante l'anno, senza occupare gli spazi principali sull'abbigliamento.</p>
+              <div class="benefit-grid">
+                <details open>
+                  <summary>Logo sito / sezione partner</summary>
+                  <p>Logo, link e breve descrizione nella pagina partner ATLS, con posizionamento distinto dai sostenitori.</p>
+                </details>
+                <details>
+                  <summary>Materiali divulgativi</summary>
+                  <p>Presenza su flyer, brochure digitali, documenti sponsor e materiali legati a giornate prova, corsi o presentazioni.</p>
+                </details>
+                <details>
+                  <summary>Post resoconto gare</summary>
+                  <p>Ringraziamento sponsor nei resoconti gara e nelle comunicazioni dopo eventi importanti, con foto e menzione coordinata.</p>
+                </details>
+                <details>
+                  <summary>Stories social</summary>
+                  <p>Menzioni IG/FB in occasione di allenamenti, gare, eventi, contenuti giovani e momenti speciali.</p>
+                </details>
+                <details>
+                  <summary>Attivazione con ATLS</summary>
+                  <p>Possibile visita in palestra, mini corso introduttivo, presenza ATLS a un evento partner o contenuto con i lottatori.</p>
+                </details>
+                <details>
+                  <summary>Uso immagini ATLS</summary>
+                  <p>Uso concordato di immagini ATLS per comunicazione aziendale, ad esempio post LinkedIn, sito o newsletter.</p>
+                </details>
+              </div>
+              <p class="note">Importo e prestazioni possono essere adattati a settore, durata, prestazioni in natura o obiettivi specifici del partner.</p>
+            </div>
+          </div>
+        </details>
+        <details class="package supporter">
+          <summary class="package-head">
+            <h3>Supporter Azienda</h3>
+            <span class="price">Da CHF 200</span>
+            <p>Ingresso semplice per sostenere ATLS.</p>
+          </summary>
+          <div class="package-body">
+            <div class="package-details">
+              <p class="package-lead">Pacchetto semplice per aziende locali che vogliono comparire come sostenitori e contribuire allo sviluppo dell'associazione.</p>
+              <div class="benefit-grid">
+                <details open>
+                  <summary>Nome o logo sul sito</summary>
+                  <p>Presenza nella pagina sostenitori ATLS con logo o nome azienda, secondo materiale fornito.</p>
+                </details>
+                <details>
+                  <summary>Ringraziamento collettivo</summary>
+                  <p>Ringraziamento annuale o periodico insieme agli altri sostenitori sui canali ATLS.</p>
+                </details>
+                <details>
+                  <summary>Immagine ATLS concordata</summary>
+                  <p>Possibilita di usare una foto ufficiale ATLS concordata per comunicare il sostegno alla lotta svizzera in Ticino.</p>
+                </details>
+                <details>
+                  <summary>Invito eventi aperti</summary>
+                  <p>Invito a momenti associativi, giornate aperte o eventi pubblici dove l'associazione incontra membri, famiglie e partner.</p>
+                </details>
+                <details>
+                  <summary>Upgrade futuro</summary>
+                  <p>Possibilita di passare a Sponsor Partner o Main Partner durante l'anno, se il progetto cresce e l'azienda vuole piu visibilita.</p>
+                </details>
+              </div>
+              <p class="note">Perfetto per aziende locali che vogliono partecipare al progetto senza un grande investimento iniziale.</p>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <section id="visibilita" class="reveal">
+      <div class="wrap section-head">
+        <div>
+          <p class="eyebrow">Visibilita indiretta</p>
+          <h2>La crescita della lotta porta attenzione anche ai partner.</h2>
+        </div>
+        <p>Questa non e visibilita garantita come un logo o un post dedicato, ma e il valore che nasce quando ATLS partecipa a gare, media, eventi pubblici e momenti sul territorio. Ogni occasione aumenta traffico verso sito, social e quindi anche verso i partner presenti sui nostri canali.</p>
+      </div>
+      <div class="wrap accordion">
+        <details open>
+          <summary>Gare e trasferte in Svizzera centrale</summary>
+          <p>I lottatori ATLS partecipano a gare, assemblee, riunioni e feste anche fuori Ticino, soprattutto nella Svizzera centrale. Questo porta il nome ATLS e il progetto sponsor in un contesto più ampio rispetto al territorio cantonale.</p>
+        </details>
+        <details>
+          <summary>Dirette TV, RSI e servizi sportivi</summary>
+          <p>Quando la lotta svizzera ticinese entra in TV o nei servizi sportivi, cresce la notorieta dello sport e aumentano visite, ricerche e attenzione verso i canali ATLS. La Festa Cantonale 2025 ha avuto una diretta RSI di 8 ore e uno share del 25%.</p>
+        </details>
+        <details>
+          <summary>Interviste, giornali e articoli</summary>
+          <p>Storie su giovani, tradizione, volontariato, nuovo locale e feste cantonali sono interessanti per giornali e media regionali. Ogni articolo rafforza la credibilita dell'associazione e rende più visibili anche sito e sponsor.</p>
+        </details>
+        <details>
+          <summary>RSI Sport e social condivisi</summary>
+          <p>Post e contenuti in collaborazione con canali come RSI Sport possono superare le 20'000 visualizzazioni. Questa attenzione ricade sui profili ATLS, dove sono presenti partner e sostenitori.</p>
+        </details>
+        <details>
+          <summary>Sagre, feste e dimostrazioni pubbliche</summary>
+          <p>Partecipazioni a sagre, feste di paese, eventi sportivi, scuole o giornate promozionali portano la lotta svizzera davanti a un pubblico che normalmente non la conosce. Questo genera contatti, nuovi follower e traffico verso il sito.</p>
+        </details>
+        <details>
+          <summary>Effetto reputazione per le aziende</summary>
+          <p>Essere presenti accanto ad ATLS significa essere associati a giovani, tradizione, forza, rispetto e territorio. Anche quando il logo non compare direttamente in TV o sui giornali, il partner beneficia della crescita complessiva del progetto.</p>
+        </details>
+      </div>
+    </section>
+
+    <section class="band-dark reveal">
+      <div class="wrap social-grid">
+        <div class="insta-card">
+          <p class="eyebrow">Canali digitali</p>
+          <h2>Instagram oggi, Facebook domani.</h2>
+          <p>Il profilo Instagram lottasvizzeraticino diventa il canale vivo per gare, allenamenti, sponsor e dietro le quinte. La pagina Facebook puo ampliare la portata verso membri passivi, famiglie e pubblico locale.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="https://www.instagram.com/lottasvizzeraticino/" target="_blank" rel="noreferrer">Apri Instagram</a>
+          </div>
+        </div>
+        <div class="card dark">
+          <span class="num">Eventi e media</span>
+          <h3>Una festa cantonale ogni tre anni.</h3>
+          <p>La Festa Cantonale Ticinese crea una piattaforma reale per sponsor e pubblico. Nel 2025 a Biasca sono arrivati circa 5000 spettatori; la diretta RSI di 8 ore ha dato ulteriore visibilita allo sport e al territorio.</p>
+          <h3>Collaborazioni autentiche.</h3>
+          <p>ATLS puo offrire contenuti credibili: allenamento, volontariato, tradizione, giovani e sviluppo di una disciplina svizzera in Ticino. Anche post condivisi con RSI Sport e articoli sulla stampa aiutano a trasformare la partnership in racconto pubblico.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contatto" class="reveal">
+      <div class="wrap split">
+        <div>
+          <p class="eyebrow">Prossimo passo</p>
+          <h2>Entrare ora significa crescere insieme al progetto.</h2>
+          <p>La partnership ATLS non e solo un logo: e una storia territoriale, sportiva e culturale ancora in fase di crescita. Per le aziende e un momento favorevole per posizionarsi in modo forte, prima che la visibilita sponsor diventi satura.</p>
+          <div class="grid-3">
+            <article class="card">
+              <h3>Contatto ATLS</h3>
+              <p>info@lottasvizzera.ch<br>www.lottasvizzera.ch</p>
+            </article>
+            <article class="card">
+              <h3>Responsabile tecnico</h3>
+              <p>Robin Crotta<br>+41 77 419 29 81</p>
+            </article>
+            <article class="card">
+              <h3>Instagram</h3>
+              <p>@lottasvizzeraticino<br>Facebook in preparazione</p>
+            </article>
+          </div>
+        </div>
+        <figure class="wide-photo">
+          <img src="output/contatto-azione-16x9.jpg" alt="Lottatori ATLS in azione">
+        </figure>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <div>
+        <strong>ATLS | Concetto Sponsoring</strong>
+        <p>Documento website preparatorio. Importi, prestazioni e superfici sponsor da approvare dal comitato e verificare secondo regolamento ESV.</p>
+      </div>
+      <ul class="source-list" aria-label="Fonti principali">
+        <li>Fonti: lottasvizzera.ch, fctls.ch, cmfgarena.ch, Rapporto annuale ATLS 2024/25.</li>
+        <li>Regolamento: ESV Reglement Werbung 2025 e manuale ESV 2025.</li>
+      </ul>
+    </div>
+  </footer>
+
+  <script>
+    const visible = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll(".reveal").forEach((section) => visible.observe(section));
+  </script>
+</body>
+</html>
