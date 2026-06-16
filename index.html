@@ -586,141 +586,335 @@
       justify-content: space-between;
     }
 
-    .packages {
+    .sponsor-section {
+      background:
+        linear-gradient(180deg, #fff9ef 0%, #f6e6cd 100%);
+    }
+
+    .sponsor-section__intro {
+      margin-bottom: 30px;
+    }
+
+    .sponsor-packages {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 18px;
       align-items: stretch;
     }
 
-    .package {
+    .sponsor-card {
+      --accent: #d6a34a;
+      --accent-rgb: 214, 163, 74;
+      position: relative;
+      min-width: 0;
+      min-height: 100%;
       display: flex;
       flex-direction: column;
-      border: 1px solid var(--line);
-      background: white;
-      box-shadow: 0 18px 44px rgba(42, 20, 10, .08);
+      gap: 18px;
+      border: 1px solid rgba(var(--accent-rgb), .48);
+      border-radius: 8px;
+      padding: clamp(20px, 2.4vw, 28px);
+      color: rgba(255, 255, 255, .92);
+      background:
+        radial-gradient(circle at 18% 0%, rgba(var(--accent-rgb), .20), transparent 34%),
+        linear-gradient(145deg, #45100e, #190807 72%);
+      box-shadow: 0 22px 48px rgba(42, 20, 10, .18);
       overflow: hidden;
-      min-width: 0;
+      transition: transform .22s ease, box-shadow .22s ease, border-color .22s ease;
     }
 
-    .package header {
-      padding: 22px;
-      color: white;
-      background: var(--ink);
-      cursor: default;
-      display: block;
+    .sponsor-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(var(--accent-rgb), .82);
+      box-shadow: 0 28px 64px rgba(42, 20, 10, .24);
     }
 
-    .package header h3,
-    .package header p {
-      margin: 0;
-      padding: 0;
+    .sponsor-card--main {
+      border-color: rgba(var(--accent-rgb), .68);
+      box-shadow: 0 28px 68px rgba(113, 17, 15, .22);
     }
 
-    .package header p {
-      margin-top: 10px;
-      color: rgba(255, 255, 255, .82);
-      font-weight: 750;
+    .sponsor-card--partner {
+      --accent: #cdd6ce;
+      --accent-rgb: 205, 214, 206;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(186, 214, 186, .18), transparent 36%),
+        linear-gradient(145deg, #163922, #08170f 74%);
     }
 
-    .package.main header { background: var(--red-dark); }
-    .package.standard header { background: var(--green); }
-    .package.supporter header { background: var(--blue); }
+    .sponsor-card--supporter {
+      --accent: #d9853d;
+      --accent-rgb: 217, 133, 61;
+      background:
+        radial-gradient(circle at 18% 0%, rgba(217, 133, 61, .19), transparent 36%),
+        linear-gradient(145deg, #10283b, #06111c 74%);
+    }
 
-    .price {
-      display: block;
-      margin-top: 12px;
-      font-size: clamp(25px, 3.2vw, 36px);
-      line-height: 1;
+    .sponsor-card__header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 58px;
+      gap: 16px;
+      align-items: start;
+      padding-bottom: 18px;
+      border-bottom: 1px solid rgba(255, 255, 255, .18);
+    }
+
+    .sponsor-card__label {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-size: 13px;
       font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sponsor-card__price {
+      margin: 0;
+      color: white;
+      font-weight: 950;
+      line-height: 1;
+    }
+
+    .sponsor-card__price strong {
+      display: block;
+      font-size: clamp(30px, 2.8vw, 42px);
       overflow-wrap: break-word;
     }
 
-    .package-body {
-      padding: 22px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-      flex: 1;
+    .sponsor-card__price span {
+      display: block;
+      margin-top: 8px;
+      color: rgba(255, 255, 255, .78);
+      font-size: 15px;
     }
 
-    .package ul {
-      margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
-    }
-
-    .package-details { color: var(--muted); }
-
-    .package .package-details p,
-    .package .note {
-      padding: 0;
-      margin: 0;
-    }
-
-    .package-lead {
-      margin-bottom: 18px;
-      color: var(--muted);
-      font-weight: 750;
-    }
-
-    .benefit-grid {
+    .sponsor-card__icon {
+      width: 58px;
+      height: 58px;
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 12px;
-      margin-top: 16px;
+      place-items: center;
+      border: 1px solid rgba(var(--accent-rgb), .62);
+      border-radius: 8px;
+      color: var(--accent);
+      background: rgba(255, 255, 255, .06);
+      box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .08);
+      font-size: 29px;
+      line-height: 1;
     }
 
-    .benefit-grid details {
-      border: 1px solid rgba(24, 18, 15, .12);
-      background: rgba(255, 249, 239, .82);
+    .sponsor-card__badge {
+      margin: -6px 0 0;
+      color: var(--accent);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .sponsor-card__copy {
+      margin: -8px 0 0;
+      color: rgba(255, 255, 255, .78);
+      font-size: 15px;
+      line-height: 1.45;
+    }
+
+    .sponsor-card__features {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+    }
+
+    .sponsor-card__features details {
+      border: 1px solid rgba(255, 255, 255, .12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .055);
       box-shadow: none;
+      overflow: hidden;
     }
 
-    .benefit-grid details[open] {
-      grid-column: span 2;
-      border-color: rgba(185, 32, 27, .28);
-      background: white;
-      box-shadow: 0 14px 32px rgba(42, 20, 10, .08);
+    .sponsor-card__features details[open] {
+      border-color: rgba(var(--accent-rgb), .42);
+      background: rgba(255, 255, 255, .09);
     }
 
-    .benefit-grid summary {
-      padding: 14px 16px;
-      color: var(--ink);
+    .sponsor-card__features summary {
+      min-height: 38px;
+      padding: 9px 10px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      color: white;
       cursor: pointer;
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.22;
+    }
+
+    .sponsor-card__features summary::before {
+      content: "\2713";
+      flex: 0 0 auto;
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      border-radius: 999px;
+      color: #170b08;
+      background: var(--accent);
+      font-size: 12px;
+      font-weight: 950;
+    }
+
+    .sponsor-card__features summary::after {
+      content: "+";
+      margin-left: auto;
+      color: var(--accent);
+      font-size: 18px;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .sponsor-card__features details[open] summary::after {
+      content: "-";
+    }
+
+    .sponsor-card__features p {
+      margin: 0;
+      padding: 0 12px 12px 37px;
+      color: rgba(255, 255, 255, .76);
+      font-size: 13px;
+      line-height: 1.45;
+    }
+
+    .sponsor-card__footer {
+      margin-top: auto;
       display: flex;
       gap: 12px;
       align-items: center;
-      justify-content: space-between;
-      font-size: 16px;
-      font-weight: 900;
-      line-height: 1.2;
+      border: 1px solid rgba(var(--accent-rgb), .34);
+      border-radius: 8px;
+      padding: 12px;
+      color: rgba(255, 255, 255, .86);
+      background: rgba(var(--accent-rgb), .12);
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.35;
     }
 
-    .benefit-grid summary::after {
-      content: "+";
-      flex: 0 0 auto;
+    .sponsor-card__footer span {
+      color: var(--accent);
+      font-size: 24px;
+      line-height: 1;
+    }
+
+    .sponsor-comparison {
+      margin-top: 36px;
+    }
+
+    .sponsor-comparison__intro {
+      margin: 0 0 14px;
+      color: var(--ink);
+      font-weight: 900;
+    }
+
+    .sponsor-comparison__wrapper {
+      overflow-x: auto;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0 16px 44px rgba(42, 20, 10, .08);
+    }
+
+    .sponsor-comparison__table {
+      width: 100%;
+      min-width: 880px;
+      border-collapse: collapse;
+      color: var(--ink);
+    }
+
+    .sponsor-comparison__table th,
+    .sponsor-comparison__table td {
+      padding: 12px 14px;
+      border-bottom: 1px solid rgba(24, 18, 15, .10);
+      vertical-align: middle;
+    }
+
+    .sponsor-comparison__table thead th {
+      color: white;
+      background: #15110f;
+      font-size: 12px;
+      line-height: 1.25;
+      text-align: center;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+    }
+
+    .sponsor-comparison__table thead th:first-child {
+      text-align: left;
+      background: #251b17;
+    }
+
+    .sponsor-comparison__table thead .is-main { background: var(--red-dark); }
+    .sponsor-comparison__table thead .is-partner { background: var(--green); }
+    .sponsor-comparison__table thead .is-supporter { background: var(--blue); }
+
+    .sponsor-comparison__table tbody th {
+      width: 42%;
+      text-align: left;
+      font-size: 14px;
+      font-weight: 850;
+    }
+
+    .sponsor-comparison__table tbody td {
+      text-align: center;
+    }
+
+    .sponsor-comparison__group th {
+      width: auto;
+      padding: 11px 14px;
+      color: var(--red-dark);
+      background: rgba(185, 32, 27, .08);
+      font-size: 12px;
+      letter-spacing: .10em;
+      text-transform: uppercase;
+    }
+
+    .sponsor-check {
       width: 24px;
       height: 24px;
-      display: grid;
+      display: inline-grid;
       place-items: center;
       border-radius: 999px;
       color: white;
       background: var(--red);
-      font-size: 18px;
+      font-size: 14px;
+      font-weight: 950;
       line-height: 1;
     }
 
-    .benefit-grid details[open] summary::after {
-      content: "-";
+    .sponsor-check--partner { background: var(--green); }
+    .sponsor-check--supporter { background: var(--blue); }
+
+    .sponsor-dash {
+      color: rgba(111, 98, 91, .42);
+      font-weight: 900;
     }
 
-    .benefit-grid details p {
-      padding: 0 18px 18px;
-      margin: 0;
+    .sponsor-section__note {
+      margin: 18px 0 0;
       color: var(--muted);
-      font-size: 16px;
-      line-height: 1.55;
+      font-size: 14px;
+    }
+
+    .sponsor-section__cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .sponsor-section__cta .btn.light {
+      border-color: var(--line);
+      box-shadow: 0 10px 24px rgba(42, 20, 10, .08);
     }
 
     .event-grid {
@@ -865,7 +1059,7 @@
         grid-template-columns: 1fr;
       }
 
-      .grid-3, .grid-4, .packages, .numbers, .event-grid {
+      .grid-3, .grid-4, .sponsor-packages, .numbers, .event-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -882,7 +1076,7 @@
         padding-inline: 18px;
       }
 
-      .grid-3, .grid-4, .packages, .numbers, .people-grid, .accordion, .event-grid, .arena-photo-grid {
+      .grid-3, .grid-4, .sponsor-packages, .numbers, .people-grid, .accordion, .event-grid, .arena-photo-grid {
         grid-template-columns: 1fr;
       }
 
@@ -890,8 +1084,8 @@
         grid-column: auto;
       }
 
-      .benefit-grid details[open] {
-        grid-column: auto;
+      .sponsor-section__cta .btn {
+        width: 100%;
       }
 
       .photo-stack {
@@ -919,7 +1113,26 @@
       .hero::before, .hero::after { display: none; }
       .lead, .band-red p, .band-dark p { color: var(--muted); }
       .band-red, .band-dark, footer { background: white; color: var(--ink); }
-      .card.dark, .metric, .quote-box, .package header { color: var(--ink); background: white; border: 1px solid var(--line); }
+      .card.dark, .metric, .quote-box, .sponsor-card { color: var(--ink); background: white; border: 1px solid var(--line); }
+      .sponsor-card__label,
+      .sponsor-card__badge,
+      .sponsor-card__price,
+      .sponsor-card__price strong,
+      .sponsor-card__price span,
+      .sponsor-card__copy,
+      .sponsor-card__features summary,
+      .sponsor-card__features p,
+      .sponsor-card__footer {
+        color: var(--ink);
+      }
+      .sponsor-card__features details,
+      .sponsor-card__footer,
+      .sponsor-comparison__wrapper {
+        background: white;
+        border: 1px solid var(--line);
+        box-shadow: none;
+      }
+      .sponsor-section__cta { display: none; }
     }
   </style>
 </head>
@@ -1240,136 +1453,183 @@
       </div>
     </section>
 
-    <section id="pacchetti" class="reveal">
-      <div class="wrap section-head">
+    <section id="pacchetti" class="reveal sponsor-section">
+      <div class="wrap section-head sponsor-section__intro">
         <div>
           <p class="eyebrow">Proposta sponsoring</p>
-          <h2>Pacchetti semplici, scalabili e pensati per durare.</h2>
+          <h2>Scegli il pacchetto partner pi&ugrave; adatto.</h2>
         </div>
-        <p>La logica principale e costruire partnership pluriennali per dare stabilita al progetto e ridurre la necessita di rifare abbigliamento e materiali ogni anno.</p>
+        <p>Tre livelli di collaborazione per sostenere la crescita della lotta svizzera in Ticino.</p>
       </div>
-      <div class="wrap packages">
-        <article class="package main">
-          <header>
-            <h3>Main Partner</h3>
-            <span class="price">CHF 5'000 / anno</span>
-            <p>3 partner principali + eventuale quarto sul cappellino.</p>
-          </header>
-          <div class="package-body">
-            <div class="package-details">
-              <p class="package-lead">Visibilita diretta inclusa nel pacchetto principale. Ogni blocco puo essere completato con dettagli, frequenza, esempi e condizioni.</p>
-              <div class="benefit-grid">
-                <details>
-                  <summary>Logo giacca e polo ufficiali</summary>
-                  <p>3 spazi logo da 30 cm2 sui capi ufficiali ATLS ammessi dal regolamento ESV. Pensato per dare ai Main Partner una presenza stabile e riconoscibile durante allenamenti, trasferte, eventi e momenti associativi.</p>
-                </details>
-                <details>
-                  <summary>Logo cappellino</summary>
-                  <p>1 spazio da 30 cm2 sul cappellino per un eventuale quarto partner. Da coordinare con colore, posizione e concetto abbigliamento prima della produzione.</p>
-                </details>
-                <details>
-                  <summary>Presenza sito premium</summary>
-                  <p>Logo, link, descrizione azienda e posizione prioritaria nella pagina partner ATLS. Il partner puo essere collegato anche da articoli, news o pagine progetto.</p>
-                </details>
-                <details>
-                  <summary>Post sponsor dedicati</summary>
-                  <p>Post ATLS personalizzati per raccontare il partner, il motivo della collaborazione e il valore concreto dato alla crescita della lotta svizzera in Ticino.</p>
-                </details>
-                <details>
-                  <summary>Stories Instagram e Facebook</summary>
-                  <p>Menzioni nelle stories durante allenamenti, gare, preparazione eventi, visite partner e contenuti dietro le quinte.</p>
-                </details>
-                <details>
-                  <summary>Materiali ufficiali ATLS</summary>
-                  <p>Logo su inviti, calendario, comunicazioni ufficiali, materiali per sponsor e presentazioni istituzionali dove coerente.</p>
-                </details>
-                <details>
-                  <summary>Menzione palestra CMFG Arena</summary>
-                  <p>Possibile presenza visiva nel nuovo locale di lotta, ad esempio parete partner, targa o pannello coordinato con l'identita ATLS.</p>
-                </details>
-                <details>
-                  <summary>Biglietti e ospitalita eventi</summary>
-                  <p>Inviti e accessi a eventi selezionati, feste e momenti associativi, secondo disponibilita e regolamenti organizzativi.</p>
-                </details>
-              </div>
-              <p class="note">Contratto consigliato: 3 anni. Secondo regolamento ESV la pubblicita non e ammessa sul tenue di gara, sugli abiti di premiazione e durante il combattimento; ogni applicazione va validata prima della produzione.</p>
+
+      <div class="wrap sponsor-packages" aria-label="Pacchetti partner ATLS">
+        <article class="sponsor-card sponsor-card--main">
+          <header class="sponsor-card__header">
+            <div>
+              <p class="sponsor-card__label">Main Partner</p>
+              <p class="sponsor-card__price"><strong>CHF 5&rsquo;000</strong><span>/ anno</span></p>
             </div>
-          </div>
-        </article>
-        <article class="package standard">
-          <header>
-            <h3>Sponsor Partner</h3>
-            <span class="price">CHF 1'000-3'000 / anno</span>
-            <p>Visibilita media e contratto annuale.</p>
+            <div class="sponsor-card__icon" aria-hidden="true">&#9733;</div>
           </header>
-          <div class="package-body">
-            <div class="package-details">
-              <p class="package-lead">Visibilita diretta per aziende che vogliono sostenere ATLS con una presenza regolare durante l'anno, senza occupare gli spazi principali sull'abbigliamento.</p>
-              <div class="benefit-grid">
-                <details>
-                  <summary>Logo sito / sezione partner</summary>
-                  <p>Logo, link e breve descrizione nella pagina partner ATLS, con posizionamento distinto dai sostenitori.</p>
-                </details>
-                <details>
-                  <summary>Materiali divulgativi</summary>
-                  <p>Presenza su flyer, brochure digitali, documenti sponsor e materiali legati a giornate prova, corsi o presentazioni.</p>
-                </details>
-                <details>
-                  <summary>Post resoconto gare</summary>
-                  <p>Ringraziamento sponsor nei resoconti gara e nelle comunicazioni dopo eventi importanti, con foto e menzione coordinata.</p>
-                </details>
-                <details>
-                  <summary>Stories social</summary>
-                  <p>Menzioni IG/FB in occasione di allenamenti, gare, eventi, contenuti giovani e momenti speciali.</p>
-                </details>
-                <details>
-                  <summary>Attivazione con ATLS</summary>
-                  <p>Possibile visita in palestra, mini corso introduttivo, presenza ATLS a un evento partner o contenuto con i lottatori.</p>
-                </details>
-                <details>
-                  <summary>Uso immagini ATLS</summary>
-                  <p>Uso concordato di immagini ATLS per comunicazione aziendale, ad esempio post LinkedIn, sito o newsletter.</p>
-                </details>
-              </div>
-              <p class="note">Importo e prestazioni possono essere adattati a settore, durata, prestazioni in natura o obiettivi specifici del partner.</p>
-            </div>
+          <p class="sponsor-card__badge">Massima visibilit&agrave;</p>
+          <p class="sponsor-card__copy">Presenza principale su abbigliamento, comunicazione ed eventi ATLS.</p>
+          <div class="sponsor-card__features">
+            <details>
+              <summary>Logo giacca e polo ufficiali</summary>
+              <p>3 spazi logo da 30 cm2 sui capi ufficiali ATLS ammessi dal regolamento ESV. Presenza stabile durante allenamenti, trasferte, eventi e momenti associativi.</p>
+            </details>
+            <details>
+              <summary>Logo cappellino</summary>
+              <p>1 spazio da 30 cm2 sul cappellino per un eventuale quarto partner, da coordinare prima della produzione.</p>
+            </details>
+            <details>
+              <summary>Presenza sito premium</summary>
+              <p>Logo, link, descrizione azienda e posizione prioritaria nella pagina partner ATLS.</p>
+            </details>
+            <details>
+              <summary>Post sponsor dedicati</summary>
+              <p>Post personalizzati per raccontare il partner, la collaborazione e il valore dato alla crescita della lotta svizzera in Ticino.</p>
+            </details>
+            <details>
+              <summary>Stories Instagram e Facebook</summary>
+              <p>Menzioni durante allenamenti, gare, eventi, visite partner e contenuti dietro le quinte.</p>
+            </details>
+            <details>
+              <summary>Materiali ufficiali ATLS</summary>
+              <p>Logo su inviti, calendario, comunicazioni ufficiali, materiali sponsor e presentazioni istituzionali dove coerente.</p>
+            </details>
+            <details>
+              <summary>Menzione palestra CMFG Arena</summary>
+              <p>Possibile presenza visiva nel nuovo locale di lotta, ad esempio parete partner, targa o pannello coordinato con l'identit&agrave; ATLS.</p>
+            </details>
+            <details>
+              <summary>Biglietti e ospitalit&agrave; eventi</summary>
+              <p>Inviti e accessi a eventi selezionati, feste e momenti associativi, secondo disponibilit&agrave; e regolamenti organizzativi.</p>
+            </details>
           </div>
+          <p class="sponsor-card__footer"><span aria-hidden="true">&#9819;</span>3 partner principali + eventuale quarto sul cappellino.</p>
         </article>
-        <article class="package supporter">
-          <header>
-            <h3>Supporter Azienda</h3>
-            <span class="price">Da CHF 200</span>
-            <p>Ingresso semplice per sostenere ATLS.</p>
+
+        <article class="sponsor-card sponsor-card--partner">
+          <header class="sponsor-card__header">
+            <div>
+              <p class="sponsor-card__label">Sponsor Partner</p>
+              <p class="sponsor-card__price"><strong>CHF 1&rsquo;000&ndash;3&rsquo;000</strong><span>/ anno</span></p>
+            </div>
+            <div class="sponsor-card__icon" aria-hidden="true">&#9670;</div>
           </header>
-          <div class="package-body">
-            <div class="package-details">
-              <p class="package-lead">Pacchetto semplice per aziende locali che vogliono comparire come sostenitori e contribuire allo sviluppo dell'associazione.</p>
-              <div class="benefit-grid">
-                <details>
-                  <summary>Nome o logo sul sito</summary>
-                  <p>Presenza nella pagina sostenitori ATLS con logo o nome azienda, secondo materiale fornito.</p>
-                </details>
-                <details>
-                  <summary>Ringraziamento collettivo</summary>
-                  <p>Ringraziamento annuale o periodico insieme agli altri sostenitori sui canali ATLS.</p>
-                </details>
-                <details>
-                  <summary>Immagine ATLS concordata</summary>
-                  <p>Possibilita di usare una foto ufficiale ATLS concordata per comunicare il sostegno alla lotta svizzera in Ticino.</p>
-                </details>
-                <details>
-                  <summary>Invito eventi aperti</summary>
-                  <p>Invito a momenti associativi, giornate aperte o eventi pubblici dove l'associazione incontra membri, famiglie e partner.</p>
-                </details>
-                <details>
-                  <summary>Upgrade futuro</summary>
-                  <p>Possibilita di passare a Sponsor Partner o Main Partner durante l'anno, se il progetto cresce e l'azienda vuole piu visibilita.</p>
-                </details>
-              </div>
-              <p class="note">Perfetto per aziende locali che vogliono partecipare al progetto senza un grande investimento iniziale.</p>
-            </div>
+          <p class="sponsor-card__badge">Visibilit&agrave; continuativa</p>
+          <p class="sponsor-card__copy">Collaborazione annuale con presenza su canali digitali e materiali ATLS.</p>
+          <div class="sponsor-card__features">
+            <details>
+              <summary>Logo sito / sezione partner</summary>
+              <p>Logo, link e breve descrizione nella pagina partner ATLS, con posizionamento distinto dai sostenitori.</p>
+            </details>
+            <details>
+              <summary>Materiali divulgativi</summary>
+              <p>Presenza su flyer, brochure digitali, documenti sponsor e materiali legati a giornate prova, corsi o presentazioni.</p>
+            </details>
+            <details>
+              <summary>Post resoconto gare</summary>
+              <p>Ringraziamento sponsor nei resoconti gara e nelle comunicazioni dopo eventi importanti, con foto e menzione coordinata.</p>
+            </details>
+            <details>
+              <summary>Stories social</summary>
+              <p>Menzioni IG/FB in occasione di allenamenti, gare, eventi, contenuti giovani e momenti speciali.</p>
+            </details>
+            <details>
+              <summary>Attivazione con ATLS</summary>
+              <p>Possibile visita in palestra, mini corso introduttivo, presenza ATLS a un evento partner o contenuto con i lottatori.</p>
+            </details>
+            <details>
+              <summary>Uso immagini ATLS</summary>
+              <p>Uso concordato di immagini ATLS per comunicazione aziendale, ad esempio post LinkedIn, sito o newsletter.</p>
+            </details>
           </div>
+          <p class="sponsor-card__footer"><span aria-hidden="true">&#9670;</span>Sostieni ATLS con continuit&agrave; e ottieni visibilit&agrave; diretta.</p>
         </article>
+
+        <article class="sponsor-card sponsor-card--supporter">
+          <header class="sponsor-card__header">
+            <div>
+              <p class="sponsor-card__label">Supporter Azienda</p>
+              <p class="sponsor-card__price"><strong>Da CHF 200</strong><span>/ anno</span></p>
+            </div>
+            <div class="sponsor-card__icon" aria-hidden="true">&#9829;</div>
+          </header>
+          <p class="sponsor-card__badge">Ingresso semplice</p>
+          <p class="sponsor-card__copy">Soluzione accessibile per aziende locali che vogliono contribuire.</p>
+          <div class="sponsor-card__features">
+            <details>
+              <summary>Nome o logo sul sito</summary>
+              <p>Presenza nella pagina sostenitori ATLS con logo o nome azienda, secondo materiale fornito.</p>
+            </details>
+            <details>
+              <summary>Ringraziamento collettivo</summary>
+              <p>Ringraziamento annuale o periodico insieme agli altri sostenitori sui canali ATLS.</p>
+            </details>
+            <details>
+              <summary>Immagine ATLS concordata</summary>
+              <p>Possibilit&agrave; di usare una foto ufficiale ATLS concordata per comunicare il sostegno alla lotta svizzera in Ticino.</p>
+            </details>
+            <details>
+              <summary>Invito eventi aperti</summary>
+              <p>Invito a momenti associativi, giornate aperte o eventi pubblici dove l'associazione incontra membri, famiglie e partner.</p>
+            </details>
+            <details>
+              <summary>Upgrade futuro</summary>
+              <p>Possibilit&agrave; di passare a Sponsor Partner o Main Partner durante l'anno, se il progetto cresce e l'azienda vuole pi&ugrave; visibilit&agrave;.</p>
+            </details>
+          </div>
+          <p class="sponsor-card__footer"><span aria-hidden="true">&#9829;</span>Ideale per aziende locali che vogliono partecipare al progetto.</p>
+        </article>
+      </div>
+
+      <div class="wrap sponsor-comparison">
+        <p class="sponsor-comparison__intro">Confronto rapido delle prestazioni incluse nei diversi pacchetti.</p>
+        <div class="sponsor-comparison__wrapper" tabindex="0" aria-label="Tabella comparativa pacchetti sponsor ATLS">
+          <table class="sponsor-comparison__table">
+            <thead>
+              <tr>
+                <th scope="col">Prestazione</th>
+                <th class="is-main" scope="col">Main Partner<br>CHF 5&rsquo;000 / anno</th>
+                <th class="is-partner" scope="col">Sponsor Partner<br>CHF 1&rsquo;000&ndash;3&rsquo;000 / anno</th>
+                <th class="is-supporter" scope="col">Supporter Azienda<br>Da CHF 200 / anno</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="sponsor-comparison__group"><th colspan="4" scope="rowgroup">Visibilit&agrave; principale</th></tr>
+              <tr><th scope="row">Logo giacca e polo ufficiali</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Logo cappellino</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Presenza sito premium</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Post sponsor dedicati</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Stories Instagram e Facebook</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Materiali ufficiali ATLS</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Menzione palestra CMFG Arena</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Biglietti e ospitalit&agrave; eventi</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+
+              <tr class="sponsor-comparison__group"><th colspan="4" scope="rowgroup">Comunicazione e presenza digitale</th></tr>
+              <tr><th scope="row">Logo sito / sezione partner</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Materiali divulgativi</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Post resoconto gare</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Stories social</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Attivazione con ATLS</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+              <tr><th scope="row">Uso immagini ATLS</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-dash" aria-label="Non incluso">&ndash;</span></td></tr>
+
+              <tr class="sponsor-comparison__group"><th colspan="4" scope="rowgroup">Sostegno base</th></tr>
+              <tr><th scope="row">Nome o logo sul sito</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--supporter" aria-label="Incluso">&#10003;</span></td></tr>
+              <tr><th scope="row">Ringraziamento collettivo</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--supporter" aria-label="Incluso">&#10003;</span></td></tr>
+              <tr><th scope="row">Immagine ATLS concordata</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--supporter" aria-label="Incluso">&#10003;</span></td></tr>
+              <tr><th scope="row">Invito eventi aperti</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--supporter" aria-label="Incluso">&#10003;</span></td></tr>
+              <tr><th scope="row">Upgrade futuro</th><td><span class="sponsor-check" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--partner" aria-label="Incluso">&#10003;</span></td><td><span class="sponsor-check sponsor-check--supporter" aria-label="Incluso">&#10003;</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="sponsor-section__note">Importi e prestazioni possono essere adattati in base al settore, alla durata del contratto, a prestazioni in natura o a obiettivi specifici del partner.</p>
+        <div class="sponsor-section__cta">
+          <a class="btn primary" href="#contatto">Diventa partner ATLS</a>
+          <button class="btn light" type="button" onclick="window.print()">Scarica il concetto partner</button>
+        </div>
       </div>
     </section>
 
