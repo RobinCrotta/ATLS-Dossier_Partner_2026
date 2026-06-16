@@ -422,27 +422,238 @@
       filter: saturate(.9) contrast(.96);
     }
 
-    .timeline {
+    .history-section {
+      color: #2a1812;
+      background:
+        radial-gradient(circle at 10% 0%, rgba(255, 210, 140, .28), transparent 30%),
+        linear-gradient(180deg, #fff7e8 0%, #f2dcc0 48%, #fff9ef 100%);
+      overflow: hidden;
+    }
+
+    .history-hero {
       display: grid;
+      grid-template-columns: minmax(320px, .82fr) minmax(0, 1fr);
+      gap: clamp(28px, 5vw, 72px);
+      align-items: center;
+      padding: clamp(34px, 5vw, 58px);
+      border: 1px solid rgba(113, 17, 15, .18);
+      border-radius: 8px;
+      background:
+        linear-gradient(135deg, rgba(113, 17, 15, .92), rgba(77, 42, 25, .88)),
+        url("output/history-winterquartier-2012.jpg") center / cover;
+      box-shadow: var(--shadow);
+      isolation: isolate;
+      position: relative;
+    }
+
+    .history-hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 86% 18%, rgba(255, 210, 140, .22), transparent 34%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .history-hero__content {
+      color: white;
+    }
+
+    .history-hero__content .eyebrow,
+    .history-hero__subtitle {
+      color: #ffd28c;
+    }
+
+    .history-hero__content h2 {
+      margin-bottom: 12px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(48px, 7vw, 96px);
+      font-weight: 700;
+      line-height: .92;
+    }
+
+    .history-hero__subtitle {
+      margin-bottom: 20px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(22px, 2.4vw, 34px);
+      font-style: italic;
+      line-height: 1.15;
+    }
+
+    .history-hero__content p:not(.eyebrow):not(.history-hero__subtitle) {
+      max-width: 650px;
+      color: rgba(255, 255, 255, .84);
+      font-size: 18px;
+    }
+
+    .history-hero__gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
-      counter-reset: item;
+      align-items: stretch;
     }
 
-    .timeline article {
-      counter-increment: item;
+    .history-photo-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      margin: 0;
+      padding: 10px;
+      border: 1px solid rgba(255, 255, 255, .24);
+      border-radius: 8px;
+      background: rgba(255, 249, 239, .92);
+      box-shadow: 0 18px 34px rgba(24, 18, 15, .18);
+      transform: rotate(var(--tilt, 0deg));
+    }
+
+    .history-photo-card:nth-child(2) { --tilt: 1.2deg; margin-top: 18px; }
+    .history-photo-card:nth-child(3) { --tilt: -1.4deg; }
+    .history-photo-card:nth-child(4) { --tilt: .8deg; margin-top: 10px; }
+
+    .history-photo-card img,
+    .history-timeline__image img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+    }
+
+    .history-photo-card img {
+      aspect-ratio: 4 / 3;
+      border-radius: 5px;
+      background: #e6d5bd;
+    }
+
+    .history-photo-card__placeholder {
+      min-height: 160px;
       display: grid;
-      grid-template-columns: 74px minmax(0, 1fr);
-      gap: 18px;
-      align-items: start;
-      padding: 18px 0;
-      border-top: 1px solid var(--line);
+      place-items: center;
+      border-radius: 5px;
+      color: rgba(42, 24, 18, .62);
+      background:
+        linear-gradient(135deg, rgba(113, 17, 15, .10), rgba(214, 163, 74, .20)),
+        #efe0ca;
+      font-weight: 900;
+      text-align: center;
     }
 
-    .timeline article::before {
-      content: counter(item, decimal-leading-zero);
-      color: var(--red);
+    .history-photo-card__caption {
+      padding-top: 9px;
+      color: #4b2b20;
+      font-size: 13px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .history-timeline {
+      position: relative;
+      margin-top: clamp(46px, 7vw, 78px);
+    }
+
+    .history-timeline::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 35px;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, rgba(113, 17, 15, .32), transparent);
+    }
+
+    .history-timeline__list {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 16px;
+      position: relative;
+    }
+
+    .history-timeline__item {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .history-timeline__icon {
+      width: 70px;
+      height: 70px;
+      display: grid;
+      place-items: center;
+      border: 8px solid #fff9ef;
+      border-radius: 999px;
+      color: white;
+      background: var(--red-dark);
+      box-shadow: 0 12px 28px rgba(113, 17, 15, .20);
       font-weight: 950;
-      font-size: 22px;
+      line-height: 1;
+      z-index: 1;
+    }
+
+    .history-timeline__card {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid rgba(24, 18, 15, .12);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, .86);
+      box-shadow: 0 14px 36px rgba(42, 20, 10, .08);
+    }
+
+    .history-timeline__card figure {
+      margin: 0;
+    }
+
+    .history-timeline__body {
+      padding: 18px;
+    }
+
+    .history-timeline__year {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--red);
+      font-size: 13px;
+      font-weight: 950;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .history-timeline__title {
+      margin-bottom: 10px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 25px;
+      line-height: 1.05;
+    }
+
+    .history-timeline__text {
+      color: var(--muted);
+      font-size: 15px;
+      line-height: 1.48;
+    }
+
+    .history-timeline__image {
+      aspect-ratio: 4 / 3;
+      border-top: 1px solid rgba(24, 18, 15, .10);
+      background: #ead9bf;
+    }
+
+    .history-timeline__caption {
+      padding: 10px 14px 14px;
+      color: rgba(42, 24, 18, .68);
+      font-size: 12px;
+      font-weight: 850;
+      line-height: 1.3;
+    }
+
+    .history-quote {
+      margin: clamp(34px, 5vw, 58px) auto 0;
+      max-width: 940px;
+      color: var(--red-dark);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(28px, 4vw, 52px);
+      font-style: italic;
+      line-height: 1.08;
+      text-align: center;
     }
 
     .numbers {
@@ -1055,11 +1266,19 @@
     }
 
     @media (max-width: 980px) {
-      .hero-inner, .section-head, .split, .team-area, .social-grid, .arena-showcase, .arena-map {
+      .hero-inner, .section-head, .split, .team-area, .social-grid, .arena-showcase, .arena-map, .history-hero {
         grid-template-columns: 1fr;
       }
 
       .grid-3, .grid-4, .sponsor-packages, .numbers, .event-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .history-timeline::before {
+        display: none;
+      }
+
+      .history-timeline__list {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
@@ -1076,8 +1295,24 @@
         padding-inline: 18px;
       }
 
-      .grid-3, .grid-4, .sponsor-packages, .numbers, .people-grid, .accordion, .event-grid, .arena-photo-grid {
+      .grid-3, .grid-4, .sponsor-packages, .numbers, .people-grid, .accordion, .event-grid, .arena-photo-grid, .history-hero__gallery, .history-timeline__list {
         grid-template-columns: 1fr;
+      }
+
+      .history-hero {
+        padding: 22px;
+      }
+
+      .history-photo-card,
+      .history-photo-card:nth-child(2),
+      .history-photo-card:nth-child(3),
+      .history-photo-card:nth-child(4) {
+        margin-top: 0;
+        transform: none;
+      }
+
+      .history-timeline__item {
+        gap: 10px;
       }
 
       .arena-photo-card.featured {
@@ -1094,10 +1329,6 @@
 
       .photo-stack img:nth-child(2) {
         margin-top: 0;
-      }
-
-      .timeline article {
-        grid-template-columns: 44px minmax(0, 1fr);
       }
 
       .topbar {
@@ -1197,48 +1428,137 @@
       </div>
     </section>
 
-    <section id="storia" class="band-red reveal">
-      <div class="wrap split">
-        <div class="copy">
+    <section id="storia" class="reveal history-section">
+      <div class="wrap history-hero">
+        <div class="history-hero__content">
           <p class="eyebrow">Da una prova a un movimento</p>
-          <h2>Una storia iniziata nella segatura, cresciuta con pazienza.</h2>
-          <p>Tra il 2009 e il 2011, alla Sportissima di Tenero, Edi Ritter e il club di Erstfeld hanno portato lezioni di prova che hanno acceso l'interesse dei giovani ticinesi. Nel 2012 quattro giovani lottatori ticinesi erano gia assicurati e partecipavano a feste ISV; il 13 agosto 2012 nasceva ufficialmente l'associazione a Camorino.</p>
-          <p>Per anni ci siamo allenati in condizioni semplici, anche in un garage nella zona industriale di Contone. Quella fase racconta bene il carattere ATLS: poche comodita, tanta volonta, un gruppo disposto a costruire un futuro sportivo quasi da zero.</p>
+          <h2>La nostra storia.</h2>
+          <p class="history-hero__subtitle">Da una prova a un movimento.</p>
+          <p>Nata da una passione condivisa, ATLS &egrave; cresciuta passo dopo passo, dagli allenamenti estivi al CST Tenero alle grandi feste cantonali. Un percorso fatto di impegno, persone e valori che continuano a unire generazioni di lottatori.</p>
         </div>
-        <div class="photo-stack">
-          <img src="output/storia-garage-4x5.jpg" alt="Primo locale di allenamento ATLS">
-          <img src="output/storia-articolo-4x5.jpg" alt="Articolo storico sulla lotta svizzera in Ticino">
-        </div>
-      </div>
-    </section>
 
-    <section class="reveal">
-      <div class="wrap timeline">
-        <article>
-          <div>
-            <h3>2009-2011: prime prove al CST Tenero</h3>
-            <p>Sportissima porta la lotta svizzera davanti a bambini, famiglie e adulti. Nasce la curiosita per una disciplina quasi assente a sud delle Alpi.</p>
-          </div>
-        </article>
-        <article>
-          <div>
-            <h3>2012: fondazione ATLS</h3>
-            <p>Il 13 agosto 2012 viene fondata l'associazione cantonale ticinese. Da qui iniziano assicurazione federale, gare nel territorio ISV e costruzione della rete associativa.</p>
-          </div>
-        </article>
-        <article>
-          <div>
-            <h3>2022: prima Festa Cantonale Ticinese</h3>
-            <p>A Cadenazzo si tiene la prima festa cantonale con incoronazione: oltre 200 partecipanti e un segnale forte per lo sviluppo della disciplina in Ticino.</p>
-          </div>
-        </article>
-        <article>
-          <div>
-            <h3>2025: seconda Festa Cantonale a Biasca</h3>
-            <p>Circa 5000 spettatori, 200 lottatori della regione ISV, 9 ticinesi in gara e una diretta RSI di 8 ore con share del 25%: una vetrina importante per sport, territorio e partner.</p>
-          </div>
-        </article>
+        <div class="history-hero__gallery" aria-label="Archivio fotografico ATLS">
+          <!-- HERO PHOTO: EDI RITTER -->
+          <figure class="history-photo-card">
+            <img src="output/history-articolo-2014.jpg" alt="Articolo storico con Edi Ritter e i primi giovani lottatori ATLS">
+            <figcaption class="history-photo-card__caption">Foto Edi Ritter</figcaption>
+          </figure>
+
+          <!-- HERO PHOTO: GRUPPO LOTTATORI 2016 -->
+          <figure class="history-photo-card">
+            <img src="output/history-gruppo-2016.jpg" alt="Gruppo di giovani lottatori ATLS nel 2016">
+            <figcaption class="history-photo-card__caption">Gruppo lottatori 2016</figcaption>
+          </figure>
+
+          <!-- HERO PHOTO: ALLENAMENTI ESTIVI AL CST -->
+          <figure class="history-photo-card">
+            <img src="output/history-cst-tenero.jpg" alt="Primi allenamenti e prove ATLS al CST Tenero">
+            <figcaption class="history-photo-card__caption">Allenamenti estivi al CST</figcaption>
+          </figure>
+
+          <!-- HERO PHOTO: FESTA CANTONALE 2022 -->
+          <figure class="history-photo-card">
+            <img src="output/history-edi-ritter.jpg" alt="Edi Ritter con la bandiera ATLS alla prima Festa Cantonale Ticinese">
+            <figcaption class="history-photo-card__caption">Festa Cantonale 2022</figcaption>
+          </figure>
+        </div>
       </div>
+
+      <div class="wrap history-timeline" aria-label="Timeline della storia ATLS">
+        <div class="history-timeline__list">
+          <article class="history-timeline__item">
+            <div class="history-timeline__icon" aria-hidden="true">01</div>
+            <div class="history-timeline__card">
+              <div class="history-timeline__body">
+                <span class="history-timeline__year">2009-2011</span>
+                <h3 class="history-timeline__title">Prime prove al CST Tenero</h3>
+                <p class="history-timeline__text">In estate gli allenamenti si svolgevano al CST in un campo esterno adatto. In inverno non c'erano condizioni adeguate e ci si allenava in garage piccoli e non riscaldati.</p>
+              </div>
+              <!-- TIMELINE PHOTO: CST / GARAGE -->
+              <figure>
+                <div class="history-timeline__image">
+                  <img src="output/history-locale-invernale-2012.jpg" alt="Primo spazio invernale usato da ATLS per allenarsi">
+                </div>
+                <figcaption class="history-timeline__caption">Allenamenti invernali nei primi spazi semplici.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="history-timeline__item">
+            <div class="history-timeline__icon" aria-hidden="true">02</div>
+            <div class="history-timeline__card">
+              <div class="history-timeline__body">
+                <span class="history-timeline__year">2012</span>
+                <h3 class="history-timeline__title">Fondazione ATLS</h3>
+                <p class="history-timeline__text">Il 13 agosto 2012 viene fondata l'Associazione Ticinese Lotta Svizzera. Nello stesso anno Edi Ritter viene nominato presidente.</p>
+              </div>
+              <!-- TIMELINE PHOTO: EDI RITTER -->
+              <figure>
+                <div class="history-timeline__image">
+                  <img src="output/history-edi-ritter.jpg" alt="Edi Ritter con la nuova bandiera ATLS">
+                </div>
+                <figcaption class="history-timeline__caption">Edi Ritter con la bandiera ATLS.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="history-timeline__item">
+            <div class="history-timeline__icon" aria-hidden="true">03</div>
+            <div class="history-timeline__card">
+              <div class="history-timeline__body">
+                <span class="history-timeline__year">2012-2022</span>
+                <h3 class="history-timeline__title">Anni di crescita</h3>
+                <p class="history-timeline__text">Durante questi anni ATLS organizza diverse piccole gare e attivita, rafforzando la presenza della lotta svizzera sul territorio. La crescita continua con costanza e passione.</p>
+              </div>
+              <!-- TIMELINE PHOTO: GRUPPO LOTTATORI 2016 -->
+              <figure>
+                <div class="history-timeline__image">
+                  <img src="output/history-gruppo-2016.jpg" alt="Gruppo di lottatori ATLS nel 2016">
+                </div>
+                <figcaption class="history-timeline__caption">Il gruppo dei lottatori ATLS nel 2016.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="history-timeline__item">
+            <div class="history-timeline__icon" aria-hidden="true">04</div>
+            <div class="history-timeline__card">
+              <div class="history-timeline__body">
+                <span class="history-timeline__year">2022</span>
+                <h3 class="history-timeline__title">Prima Festa Cantonale Ticinese</h3>
+                <p class="history-timeline__text">Nel 2022 si svolge la prima Festa Cantonale Ticinese. Edi Ritter guida l'associazione fino a questo traguardo e a fine 2022 lascia il testimone a Loris Di Pietro.</p>
+              </div>
+              <!-- TIMELINE PHOTO: FESTA 2022 -->
+              <figure>
+                <div class="history-timeline__image">
+                  <img src="output/history-edi-ritter.jpg" alt="Prima Festa Cantonale Ticinese con la bandiera ATLS">
+                </div>
+                <figcaption class="history-timeline__caption">La bandiera ATLS alla prima Festa Cantonale Ticinese.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="history-timeline__item">
+            <div class="history-timeline__icon" aria-hidden="true">05</div>
+            <div class="history-timeline__card">
+              <div class="history-timeline__body">
+                <span class="history-timeline__year">2025</span>
+                <h3 class="history-timeline__title">Seconda Festa Cantonale a Biasca</h3>
+                <p class="history-timeline__text">Nel 2025 ATLS organizza la seconda Festa Cantonale a Biasca, confermando la crescita del movimento e la sua importanza nel panorama della lotta svizzera in Ticino.</p>
+              </div>
+              <!-- TIMELINE PHOTO: BIASCA 2025 -->
+              <figure>
+                <div class="history-timeline__image">
+                  <img src="output/history-biasca-2025.jpg" alt="Seconda Festa Cantonale Ticinese a Biasca nel 2025">
+                </div>
+                <figcaption class="history-timeline__caption">Biasca 2025: il movimento cresce e si conferma.</figcaption>
+              </figure>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <p class="wrap history-quote">Le radici nella tradizione. Lo sguardo al futuro.</p>
     </section>
 
     <section class="reveal">
