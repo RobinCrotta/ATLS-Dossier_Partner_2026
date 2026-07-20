@@ -63,6 +63,7 @@
       width: 52px;
       height: 52px;
       object-fit: contain;
+      mix-blend-mode: multiply;
     }
 
     .nav {
@@ -1475,23 +1476,188 @@
       }
       .sponsor-section__cta { display: none; }
     }
+    /* Homepage 2026: timeline e overview compatta */
+    .history-hero,
+    .history-timeline__icon,
+    #arena,
+    #numeri,
+    .homepage-detail,
+    #pacchetti,
+    #visibilita,
+    #contatto { display: none; }
+
+    .history-section { padding-top: clamp(64px, 8vw, 108px); }
+    .history-intro { max-width: 1120px; margin-bottom: 34px; }
+    .history-intro h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(36px, 4vw, 56px); }
+    .history-intro p:last-child { max-width: 720px; font-size: 18px; }
+    .history-timeline { margin-top: 0; }
+    .history-timeline::before { top: 20px; left: 4%; right: 4%; background: linear-gradient(90deg, var(--red-dark), rgba(113,17,15,.22)); }
+    .history-timeline__list { grid-template-columns: minmax(350px, 1.45fr) repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .history-timeline__item { display: block; padding-top: 42px; position: relative; }
+    .history-timeline__item::before { content: ""; position: absolute; top: 10px; left: 18px; width: 18px; height: 18px; border: 5px solid #fff9ef; border-radius: 50%; background: var(--red-dark); box-shadow: 0 0 0 2px var(--red-dark); z-index: 2; }
+    .history-timeline__item:nth-child(5) { display: none; }
+    .history-timeline__card { min-height: 590px; border-radius: 8px; }
+    .history-timeline__body { padding: 22px; }
+    .history-timeline__card figure { display: block; margin-top: auto; border-top: 1px solid rgba(24,18,15,.10); }
+    .history-timeline__image { height: 210px; aspect-ratio: auto; }
+    .history-timeline__caption { min-height: 50px; padding: 10px 14px 13px; background: rgba(255,255,255,.72); }
+    .history-timeline__item--future .history-timeline__card {
+      border: 1px solid rgba(102,120,94,.48);
+      border-top: 7px solid #66785e;
+      background: #fffdf7;
+      box-shadow: 0 14px 30px rgba(62,72,52,.12);
+    }
+    .history-timeline__item--future::before {
+      width: 24px;
+      height: 24px;
+      top: 7px;
+      background: #66785e;
+      box-shadow: 0 0 0 2px #66785e;
+    }
+    .history-timeline__item--future .history-timeline__year,
+    .history-timeline__item--future .future-points li { color: #56674f; }
+    .future-points {
+      display: grid;
+      gap: 7px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .future-points li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--red-dark);
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.35;
+    }
+    .future-points li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: .45em;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #66785e;
+    }
+
+    .project-2030 { padding: 0; background: #fff9ef; }
+    .project-2030__hero { min-height: calc(100vh - 72px); display: flex; align-items: end; padding: clamp(54px, 8vw, 110px) 0; color: white; background: linear-gradient(0deg, rgba(22,12,9,.90), rgba(22,12,9,.10) 70%), url("output/cmfg-arena-render-16x9.png") center / cover; position: relative; overflow: hidden; }
+    .project-2030__hero::before { content: "2026—2030"; position: absolute; top: clamp(24px,4vw,54px); right: max(32px, calc((100vw - var(--max)) / 2)); color: rgba(255,255,255,.76); font-family: Georgia, "Times New Roman", serif; font-size: clamp(36px, 6vw, 82px); font-weight: 700; }
+    .project-2030__copy { width: min(calc(100% - 64px), var(--max)); margin: 0 auto; }
+    .project-2030__copy > * { max-width: 900px; }
+    .project-2030__copy .eyebrow { color: #ffd28c; }
+    .project-2030__copy h2 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(48px, 7vw, 92px); line-height: .92; }
+    .project-2030__copy p { color: rgba(255,255,255,.84); font-size: 18px; }
+    .project-2030__details { padding: clamp(64px, 8vw, 108px) 0; }
+    .project-2030__details > .wrap { width: min(calc(100% - 64px), var(--max)); }
+    .project-2030__details-head { max-width: 920px; margin-bottom: 34px; }
+    .project-2030__details-head h3 { font-family: Georgia, "Times New Roman", serif; font-size: clamp(38px, 5vw, 64px); }
+    .project-pillars { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 16px; margin-top: 0; }
+    .project-pillar { min-height: 100%; padding: 0; border: 1px solid var(--line); background: white; box-shadow: 0 16px 42px rgba(42,20,10,.08); overflow: hidden; }
+    .project-pillar img { width: 100%; aspect-ratio: 4 / 3; display: block; object-fit: cover; }
+    .project-pillar__copy { padding: 20px; }
+    .project-pillar strong { display: block; margin-bottom: 8px; color: var(--red-dark); font-family: Georgia, "Times New Roman", serif; font-size: 25px; }
+    .project-pillar span { color: var(--muted); font-size: 15px; line-height: 1.5; }
+
+    .support-overview { padding: clamp(58px, 7vw, 94px) 0; }
+    .support-overview > .wrap { width: min(calc(100% - 64px), var(--max)); }
+    .support-overview .section-head .eyebrow {
+      padding-left: 13px;
+      border-left: 5px solid #66785e;
+      color: #56674f;
+      font-size: 16px;
+      font-weight: 950;
+      letter-spacing: 0;
+    }
+    .support-grid { display: grid; grid-template-columns: repeat(4, minmax(0,1fr)); gap: 1px; padding: 1px; background: rgba(113,17,15,.20); box-shadow: 0 18px 48px rgba(42,20,10,.08); }
+    .support-card { min-height: 235px; padding: 24px; border: 0; background: linear-gradient(145deg, #fff, #fff9ef); box-shadow: none; }
+    .support-card__icon { width: 44px; height: 44px; display: grid; place-items: center; margin-bottom: 16px; border-radius: 50%; color: white; background: var(--red-dark); }
+    .support-card__icon svg { width: 23px; height: 23px; fill: none; stroke: currentColor; stroke-width: 2; }
+    .support-card strong { display: block; color: var(--red-dark); font-size: 34px; line-height: 1; }
+    .support-card h3 { margin-top: 10px; }
+    .support-card--partner strong { font-size: 29px; }
+    .support-partners { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 22px; align-items: center; margin-top: 18px; padding: 24px; border-left: 5px solid var(--red-dark); background: linear-gradient(90deg, rgba(113,17,15,.08), white); }
+    .support-partners__copy { max-width: 800px; }
+
+    .act-now { min-height: calc(100vh - 72px); padding: 0; color: white; background: var(--red-dark); }
+    .act-now__layout { min-height: calc(100vh - 72px); display: grid; grid-template-columns: minmax(0,1.1fr) minmax(380px,.9fr); }
+    .act-now__copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: clamp(54px, 8vw, 118px); background: linear-gradient(135deg, #76110f, #2b0b09 76%); }
+    .act-now h2 {
+      max-width: 900px;
+      margin-bottom: 28px;
+      font-family: inherit;
+      font-size: clamp(52px, 6.5vw, 88px);
+      font-weight: 950;
+      line-height: .98;
+    }
+    .act-now p { max-width: 780px; color: rgba(255,255,255,.78); font-size: 18px; }
+    .act-now__copy .btn {
+      min-height: 60px;
+      margin-top: 28px;
+      padding: 17px 28px;
+      font-size: 17px;
+      box-shadow: 0 14px 30px rgba(0,0,0,.20);
+    }
+    .act-now__visual { min-width: 0; margin: 0; background: #ead9bf; overflow: hidden; }
+    .act-now__visual img { width: 100%; height: 100%; display: block; object-fit: cover; object-position: center 38%; }
+
+    @media (max-width: 980px) {
+      .history-timeline__list, .project-pillars, .support-grid { grid-template-columns: repeat(2, minmax(0,1fr)); }
+      .history-timeline::before { display: none; }
+      .history-timeline__item { padding-top: 30px; }
+      .act-now__layout { grid-template-columns: 1fr; }
+      .act-now__visual { min-height: 70vh; }
+    }
+    @media (max-width: 640px) {
+      .history-timeline__list, .project-pillars, .support-grid, .future-points { grid-template-columns: 1fr; }
+      .project-2030__hero { min-height: 760px; }
+      .project-2030__copy { width: min(calc(100% - 32px), var(--max)); }
+      .project-2030__details > .wrap { width: min(calc(100% - 32px), var(--max)); }
+      .support-overview > .wrap { width: min(calc(100% - 32px), var(--max)); }
+    }
+    /* Sistema tipografico comune */
+    h1, h2, h3, h4,
+    .history-hero__subtitle,
+    .project-2030__hero::before,
+    .project-pillar strong {
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif !important;
+      letter-spacing: 0;
+    }
+
+    section h2 { font-weight: 650 !important; line-height: 1.08; }
+    section h3 { font-weight: 700 !important; line-height: 1.16; }
+
+    .history-section {
+      background: var(--paper);
+    }
+
+    .history-intro h2 {
+      max-width: 1040px;
+      font-size: clamp(34px, 3.25vw, 48px);
+      font-weight: 600 !important;
+      line-height: 1.12;
+    }
+
+    .history-intro p:last-child {
+      font-size: 17px;
+    }
   </style>
 </head>
 <body>
   <header class="topbar">
-    <a class="brand" href="#top" aria-label="Torna alla copertina">
+    <a class="brand" href="index.html" aria-label="Torna alla copertina">
       <img src="output/logo-atls.png" alt="Logo ATLS">
-      <span>ATLS Sponsoring</span>
+      <span>Concetto Partner ATLS</span>
     </a>
     <nav class="nav" aria-label="Navigazione">
-      <a href="#chi-siamo">Chi siamo</a>
-      <a href="#storia">Storia</a>
-      <a href="#arena">CMFG Arena</a>
-      <a href="#numeri">Numeri</a>
-      <a href="#pacchetti">Pacchetti</a>
-      <a href="#visibilita">Visibilita</a>
-      <a href="#contatto">Contatto</a>
-      <button class="print-btn" type="button" onclick="window.print()">Stampa PDF</button>
+      <a href="index.html#chi-siamo">Chi siamo</a>
+      <a href="index.html#storia">Storia</a>
+      <a href="index.html#progetto-2030">Progetto 2030</a>
+      <a href="persone.html#comitato">Associazione</a>
+      <a href="sostenerci.html">Concetto partner</a>
+      <a href="contatti.html">Contatti</a>
     </nav>
   </header>
 
@@ -1499,14 +1665,9 @@
     <section class="hero">
       <div class="hero-inner">
         <div>
-          <p class="eyebrow">Concetto sponsoring 2026-2030</p>
-          <h1>Tradizione, forza e rispetto.</h1>
+          <p class="eyebrow">Concetto Partner</p>
+          <h1>Associazione Ticinese di Lotta Svizzera</h1>
           <p class="lead">Una proposta per aziende e partner che vogliono accompagnare la crescita della lotta svizzera in Ticino: giovani, territorio, eventi, comunicazione e un nuovo locale alla CMFG Arena.</p>
-          <div class="hero-actions">
-            <a class="btn primary" href="#pacchetti">Scopri i pacchetti</a>
-            <a class="btn light" href="#visibilita">Vedi la visibilita</a>
-            <a class="btn ghost" href="https://www.instagram.com/lottasvizzeraticino/" target="_blank" rel="noreferrer">Instagram ATLS</a>
-          </div>
         </div>
       </div>
     </section>
@@ -1515,20 +1676,20 @@
       <div class="wrap section-head">
         <div>
           <p class="eyebrow">Associazione</p>
-          <h2>Lotta svizzera in Ticino, con radici solide e una visione nuova.</h2>
+          <h2>L'Associazione Ticinese di Lotta Svizzera (ATLS)</h2>
         </div>
-        <p>L'Associazione Ticinese di Lotta Svizzera rappresenta questo sport nazionale nel Canton Ticino. E membro dell'Innerschweizer Schwingerverband e dell'Associazione federale di lotta svizzera. Il nostro compito e promuovere la disciplina, trasmetterne i valori e creare occasioni concrete per giovani, atleti, famiglie e partner.</p>
+        <p>L'ATLS &egrave; l'associazione che rappresenta la lotta svizzera nel Canton Ticino. &Egrave; membro dell'Associazione di lotta svizzera della Svizzera centrale (ISV) e dell'Associazione federale di lotta svizzera (ESV).<br><br>Lo scopo dell'ATLS &egrave; la cura, la promozione e la diffusione della lotta svizzera, contribuendo cos&igrave; a conservare gli usi e costumi popolari della Svizzera e del Ticino.</p>
       </div>
       <div class="wrap grid-3 identity-cards">
         <article class="card">
           <span class="num">Visione</span>
-          <h3>Un punto di riferimento stabile entro il 2030.</h3>
-          <p>Vogliamo rendere la lotta svizzera piu conosciuta, accessibile e riconoscibile in Ticino, con un locale adeguato, un gruppo sportivo attivo e una comunicazione professionale.</p>
+          <h3>Rendere la lotta svizzera una realtà ticinese entro il 2030.</h3>
+          <p>Vogliamo radicare definitivamente la lotta svizzera nella realtà sportiva e culturale del Ticino, rendendola riconosciuta, accessibile e tramandata alle future generazioni.</p>
         </article>
         <article class="card">
           <span class="num">Missione</span>
-          <h3>Far crescere persone, non solo risultati.</h3>
-          <p>Allenamenti, dimostrazioni, feste, attivita con scuole e aziende: ATLS crea esperienze in cui forza, tecnica e fair play diventano educazione concreta.</p>
+          <h3>Formare giovani, creare opportunità e diffondere la lotta svizzera.</h3>
+          <p>Attraverso allenamenti, formazione, eventi e una comunicazione professionale, rendiamo la lotta svizzera sempre più accessibile e presente in tutto il Ticino.</p>
         </article>
         <article class="card">
           <span class="num">Valori</span>
@@ -1539,57 +1700,30 @@
     </section>
 
     <section id="storia" class="reveal history-section">
-      <div class="wrap history-hero">
-        <div class="history-hero__content">
-          <p class="eyebrow">Da una prova a un movimento</p>
-          <h2>La nostra storia.</h2>
-          <p class="history-hero__subtitle">Da una prova a un movimento.</p>
-          <p>Nata da una passione condivisa, ATLS &egrave; cresciuta passo dopo passo, dagli allenamenti estivi al CST Tenero alle grandi feste cantonali. Un percorso fatto di impegno, persone e valori che continuano a unire generazioni di lottatori.</p>
-        </div>
-
-        <div class="history-hero__gallery" aria-label="Archivio fotografico ATLS">
-          <!-- HERO PHOTO: EDI RITTER -->
-          <figure class="history-photo-card">
-            <img src="output/history-articolo-2014.jpg" alt="Articolo storico con Edi Ritter e i primi giovani lottatori ATLS">
-            <figcaption class="history-photo-card__caption">Foto Edi Ritter</figcaption>
-          </figure>
-
-          <!-- HERO PHOTO: GRUPPO LOTTATORI 2016 -->
-          <figure class="history-photo-card">
-            <img src="output/history-gruppo-2016.jpg" alt="Gruppo di giovani lottatori ATLS nel 2016">
-            <figcaption class="history-photo-card__caption">Gruppo lottatori 2016</figcaption>
-          </figure>
-
-          <!-- HERO PHOTO: ALLENAMENTI ESTIVI AL CST -->
-          <figure class="history-photo-card">
-            <img src="output/history-cst-tenero.jpg" alt="Primi allenamenti e prove ATLS al CST Tenero">
-            <figcaption class="history-photo-card__caption">Allenamenti estivi al CST</figcaption>
-          </figure>
-
-          <!-- HERO PHOTO: FESTA CANTONALE 2022 -->
-          <figure class="history-photo-card">
-            <img src="output/history-edi-ritter.jpg" alt="Edi Ritter con la bandiera ATLS alla prima Festa Cantonale Ticinese">
-            <figcaption class="history-photo-card__caption">Festa Cantonale 2022</figcaption>
-          </figure>
-        </div>
+      <div class="wrap history-intro">
+        <p class="eyebrow">La nostra storia</p>
+        <h2>Dalle prime prove agli inverni nei garage improvvisati, fino alla prima vera palestra per la lotta svizzera in Ticino.</h2>
+        <p>Una linea del tempo essenziale: prima il futuro che vogliamo costruire, poi i passaggi che hanno reso possibile arrivare fin qui.</p>
       </div>
 
-      <div class="wrap history-timeline" aria-label="Timeline della storia ATLS">
+      <div class="wrap history-timeline" aria-label="Timeline della storia e del futuro ATLS">
         <div class="history-timeline__list">
-          <article class="history-timeline__item">
+          <article class="history-timeline__item history-timeline__item--future">
             <div class="history-timeline__icon" aria-hidden="true">01</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <span class="history-timeline__year">2009-2011</span>
-                <h3 class="history-timeline__title">Prime prove al CST Tenero</h3>
-                <p class="history-timeline__text">In estate gli allenamenti si svolgevano al CST in un campo esterno adatto. In inverno non c'erano condizioni adeguate e ci si allenava in garage piccoli e non riscaldati.</p>
+                <span class="history-timeline__year">2026-2030 · Il futuro</span>
+                <h3 class="history-timeline__title">Radicare la lotta svizzera in Ticino</h3>
+                <p class="history-timeline__text">La nuova fase ATLS unisce infrastruttura, cultura, eventi e giovani in un progetto comune.</p>
+                <ul class="future-points"><li>Nuova palestra</li><li>Settore giovanile</li><li>Divulgazione culturale</li><li>Feste di lotta</li></ul>
+                <p><a class="timeline-link" href="#progetto-2030">Scopri cosa faremo →</a></p>
               </div>
               <!-- TIMELINE PHOTO: CST / GARAGE -->
               <figure>
                 <div class="history-timeline__image">
-                  <img src="output/history-locale-invernale-2012.jpg" alt="Primo spazio invernale usato da ATLS per allenarsi">
+                  <img src="output/arena-allestimento-cmfg.jpg" alt="Progetto del nuovo locale ATLS alla CMFG Arena">
                 </div>
-                <figcaption class="history-timeline__caption">Allenamenti invernali nei primi spazi semplici.</figcaption>
+                <figcaption class="history-timeline__caption">La nuova base ATLS a Sigirino apre il prossimo capitolo.</figcaption>
               </figure>
             </div>
           </article>
@@ -1598,16 +1732,16 @@
             <div class="history-timeline__icon" aria-hidden="true">02</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <span class="history-timeline__year">2012</span>
-                <h3 class="history-timeline__title">Fondazione ATLS</h3>
-                <p class="history-timeline__text">Il 13 agosto 2012 viene fondata l'Associazione Ticinese Lotta Svizzera. Nello stesso anno Edi Ritter viene nominato presidente.</p>
+                <span class="history-timeline__year">2022 e 2025</span>
+                <h3 class="history-timeline__title">Prima e seconda Festa Cantonale</h3>
+                <p class="history-timeline__text">Cadenazzo 2022 apre una nuova fase. Biasca 2025 conferma la crescita con circa 5000 spettatori, 200 lottatori e 8 ore di diretta RSI.</p>
               </div>
-              <!-- TIMELINE PHOTO: EDI RITTER -->
+              <!-- TIMELINE PHOTO: FESTE CANTONALI -->
               <figure>
                 <div class="history-timeline__image">
-                  <img src="output/history-edi-ritter.jpg" alt="Edi Ritter con la nuova bandiera ATLS">
+                  <img src="output/history-biasca-2025.jpg" alt="Seconda Festa Cantonale Ticinese a Biasca nel 2025">
                 </div>
-                <figcaption class="history-timeline__caption">Edi Ritter con la bandiera ATLS.</figcaption>
+                <figcaption class="history-timeline__caption">Biasca 2025: il movimento cresce e coinvolge tutto il Cantone.</figcaption>
               </figure>
             </div>
           </article>
@@ -1616,16 +1750,16 @@
             <div class="history-timeline__icon" aria-hidden="true">03</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <span class="history-timeline__year">2012-2022</span>
-                <h3 class="history-timeline__title">Anni di crescita</h3>
-                <p class="history-timeline__text">Durante questi anni ATLS organizza diverse piccole gare e attivita, rafforzando la presenza della lotta svizzera sul territorio. La crescita continua con costanza e passione.</p>
+                <span class="history-timeline__year">2012</span>
+                <h3 class="history-timeline__title">Fondazione ATLS</h3>
+                <p class="history-timeline__text">Il 13 agosto nasce ufficialmente l'Associazione Ticinese Lotta Svizzera. Edi Ritter viene nominato primo presidente.</p>
               </div>
-              <!-- TIMELINE PHOTO: GRUPPO LOTTATORI 2016 -->
+              <!-- TIMELINE PHOTO: FONDAZIONE -->
               <figure>
                 <div class="history-timeline__image">
-                  <img src="output/history-gruppo-2016.jpg" alt="Gruppo di lottatori ATLS nel 2016">
+                  <img src="output/history-edi-ritter.jpg" alt="Edi Ritter con la bandiera ATLS">
                 </div>
-                <figcaption class="history-timeline__caption">Il gruppo dei lottatori ATLS nel 2016.</figcaption>
+                <figcaption class="history-timeline__caption">Edi Ritter con la bandiera ATLS.</figcaption>
               </figure>
             </div>
           </article>
@@ -1634,16 +1768,16 @@
             <div class="history-timeline__icon" aria-hidden="true">04</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <span class="history-timeline__year">2022</span>
-                <h3 class="history-timeline__title">Prima Festa Cantonale Ticinese</h3>
-                <p class="history-timeline__text">Nel 2022 si svolge la prima Festa Cantonale Ticinese. Edi Ritter guida l'associazione fino a questo traguardo e a fine 2022 lascia il testimone a Loris Di Pietro.</p>
+                <span class="history-timeline__year">2009-2011</span>
+                <h3 class="history-timeline__title">Prime prove al CST Tenero</h3>
+                <p class="history-timeline__text">Le prime lezioni a Sportissima accendono l'interesse. In inverno si lavora in piccoli garage non riscaldati: condizioni semplici, ma tanta volonta.</p>
               </div>
-              <!-- TIMELINE PHOTO: FESTA 2022 -->
+              <!-- TIMELINE PHOTO: CST / GARAGE -->
               <figure>
                 <div class="history-timeline__image">
-                  <img src="output/history-edi-ritter.jpg" alt="Prima Festa Cantonale Ticinese con la bandiera ATLS">
+                  <img src="output/history-locale-invernale-2012.jpg" alt="Primo spazio invernale usato da ATLS per allenarsi">
                 </div>
-                <figcaption class="history-timeline__caption">La bandiera ATLS alla prima Festa Cantonale Ticinese.</figcaption>
+                <figcaption class="history-timeline__caption">Allenamenti invernali nei primi spazi semplici.</figcaption>
               </figure>
             </div>
           </article>
@@ -1669,6 +1803,54 @@
       </div>
 
       <p class="wrap history-quote">Le radici nella tradizione. Lo sguardo al futuro.</p>
+    </section>
+
+    <section id="progetto-2030" class="reveal project-2030">
+      <div class="project-2030__hero">
+        <div class="project-2030__copy">
+          <p class="eyebrow">Cosa faremo</p>
+          <h2>Progetto 2026-2030.</h2>
+          <p>La nuova palestra di Sigirino e il punto di partenza. Da qui vogliamo costruire un settore giovanile stabile, raccontare la cultura della lotta svizzera in Ticino e organizzare nuovi grandi appuntamenti.</p>
+        </div>
+      </div>
+      <div class="project-2030__details">
+        <div class="wrap">
+          <div class="project-2030__details-head">
+            <p class="eyebrow">I quattro pilastri per il futuro</p>
+            <h3>Una base concreta per il futuro della lotta svizzera in Ticino.</h3>
+          </div>
+          <div class="project-pillars">
+            <article class="project-pillar"><img src="output/cmfg-arena-render-16x9.png" alt="Nuovo locale di lotta ATLS alla CMFG Arena"><div class="project-pillar__copy"><strong>Infrastruttura</strong><span>La nuova casa alla CMFG-Arena di Sigirino permetterà per la prima volta di allenarsi adeguatamente tutto l'anno, dando continuita e aprendo nuove opportunità.</span></div></article>
+            <article class="project-pillar"><img src="output/giovani-lottatori-16x9.jpg" alt="Giovani lottatori ATLS"><div class="project-pillar__copy"><strong>Settore giovanile</strong><span>Giornate prova, collaborazioni con scuole e un percorso sportivo capace di accompagnare nuovi giovani lottatori.</span></div></article>
+            <article class="project-pillar"><img src="output/divulgazione-culturale-4x3.png" alt="Divulgazione culturale e mediatica della lotta svizzera"><div class="project-pillar__copy"><strong>Divulgazione culturale</strong><span>Eventi, dimostrazioni, interviste e contenuti mediatici per raccontare valori, tecnica e cultura della lotta svizzera.</span></div></article>
+            <article class="project-pillar"><img src="output/evento-festa-4x3.jpg" alt="Festa Cantonale Ticinese di lotta svizzera"><div class="project-pillar__copy"><strong>Feste di lotta</strong><span>Verso la terza Festa Cantonale Ticinese e nuovi appuntamenti capaci di unire pubblico, sport e territorio.</span></div></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="sostegno" class="reveal support-overview">
+      <div class="wrap section-head">
+        <div><p class="eyebrow">Le persone in missione</p><h2>Una comunita che rende possibile la crescita.</h2></div>
+        <p>ATLS vive grazie a persone che lavorano, si allenano, partecipano e sostengono. I numeri mostrano una struttura piccola ma molto concreta.</p>
+      </div>
+      <div class="wrap support-grid">
+        <article class="support-card"><div class="support-card__icon"><svg viewBox="0 0 24 24"><path d="M4 20v-2a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v2M9 7a3 3 0 1 0 6 0 3 3 0 0 0-6 0"/></svg></div><strong>6</strong><h3>Membri di comitato</h3><p>Competenze sportive, amministrative e professionali al servizio di ATLS.</p></article>
+        <article class="support-card"><div class="support-card__icon"><svg viewBox="0 0 24 24"><path d="M7 4l5 3 5-3 3 4-3 3v9H7v-9L4 8z"/></svg></div><strong>10 + 3</strong><h3>Lottatori</h3><p>Dieci attivi e tre giovani tesserati nel 2026.</p></article>
+        <article class="support-card"><div class="support-card__icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5v14M4 4h16v16H4z"/></svg></div><strong>243+</strong><h3>Membri passivi</h3><p>La rete associativa che sostiene il movimento e crea un ambiente familiare.</p></article>
+        <article class="support-card support-card--partner"><div class="support-card__icon"><svg viewBox="0 0 24 24"><path d="M4 7h16v10H4zM8 11h8M12 7v10"/></svg></div><strong>Partner</strong><h3>Una rete da costruire</h3><p>Aziende e sostenitori che condividono visione, territorio e crescita.</p></article>
+      </div>
+      <div class="wrap support-partners">
+        <div class="support-partners__copy"><h3>Dietro questi numeri ci sono persone, volontari e una comunit&agrave;.</h3><p>Scopri chi guida ATLS, chi scende in campo e come la rete dei membri rende possibile il progetto.</p></div>
+        <a class="btn primary" href="persone.html#comitato">Scopri l'associazione</a>
+      </div>
+    </section>
+
+    <section class="reveal act-now">
+      <div class="act-now__layout">
+        <div class="act-now__copy"><h2>Perch&eacute; sostenerci</h2><p>La nuova base di Sigirino, un gruppo giovane e un'associazione piena di energia creano una finestra unica. Chi entra oggi non accompagna un progetto gi&agrave; concluso: contribuisce a costruirne le fondamenta e a rendere la lotta svizzera una presenza definitiva nel Cantone.</p><a class="btn light" href="sostenerci.html">Scopri come sostenerci</a></div>
+        <figure class="act-now__visual"><img src="output/cta-bandiera-ticinese-4x5.jpg" alt="Bandiera ticinese della lotta svizzera durante la Festa Cantonale"></figure>
+      </div>
     </section>
 
     <section id="arena" class="reveal">
@@ -1741,7 +1923,7 @@
       </div>
     </section>
 
-    <section class="reveal">
+    <section class="reveal homepage-detail">
       <div class="wrap section-head">
         <div>
           <p class="eyebrow">Comitato</p>
@@ -1774,7 +1956,7 @@
         </article>
         <article class="person portrait-ruth">
           <div class="portrait-frame">
-            <div class="portrait-placeholder member-photo">Foto Ruth Crotta<br>in arrivo</div>
+            <img class="member-photo" src="output/portrait-ruth-crotta.png?v=20260720" alt="Ritratto Ruth Crotta">
           </div>
           <div class="person-body">
             <small>Segretaria e cassiera</small>
@@ -1785,7 +1967,7 @@
         </article>
         <article class="person portrait-robin">
           <div class="portrait-frame">
-            <img class="member-photo" src="output/portrait-robin-crotta.jpg?v=20260616b" alt="Ritratto Robin Crotta">
+            <img class="member-photo" src="output/portrait-robin-crotta.png?v=20260720" alt="Ritratto Robin Crotta">
           </div>
           <div class="person-body">
             <small>Capo tecnico</small>
@@ -1819,7 +2001,7 @@
       </div>
     </section>
 
-    <section class="reveal">
+    <section class="reveal homepage-detail">
       <div class="wrap team-area">
         <figure class="wide-photo">
           <img src="output/lottatori-gruppo-16x9.jpg" alt="Foto di gruppo ATLS">
@@ -1835,7 +2017,7 @@
       </div>
     </section>
 
-    <section class="reveal">
+    <section class="reveal homepage-detail">
       <div class="wrap team-area">
         <figure class="wide-photo">
           <img src="output/giovani-lottatori-16x9.jpg" alt="Giovani lottatori ATLS">
@@ -2025,8 +2207,7 @@
         </div>
         <p class="sponsor-section__note">Importi e prestazioni possono essere adattati in base al settore, alla durata del contratto, a prestazioni in natura o a obiettivi specifici del partner.</p>
         <div class="sponsor-section__cta">
-          <a class="btn primary" href="#contatto">Diventa partner ATLS</a>
-          <button class="btn light" type="button" onclick="window.print()">Scarica il concetto partner</button>
+          <a class="btn primary" href="contatti.html">Diventa partner ATLS</a>
         </div>
       </div>
     </section>
@@ -2165,13 +2346,10 @@
   <footer>
     <div class="wrap">
       <div>
-        <strong>ATLS | Concetto Sponsoring</strong>
-        <p>Documento website preparatorio. Importi, prestazioni e superfici sponsor da approvare dal comitato e verificare secondo regolamento ESV.</p>
+        <strong>Concetto Partner ATLS</strong>
+        <p>Versione 20.07.2026</p>
       </div>
-      <ul class="source-list" aria-label="Fonti principali">
-        <li>Fonti: lottasvizzera.ch, fctls.ch, cmfgarena.ch, Rapporto annuale ATLS 2024/25.</li>
-        <li>Regolamento: ESV Reglement Werbung 2025 e manuale ESV 2025.</li>
-      </ul>
+      <p>Boris Baroni &amp; Robin Crotta</p>
     </div>
   </footer>
 
