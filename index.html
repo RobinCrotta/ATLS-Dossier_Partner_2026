@@ -1643,6 +1643,60 @@
     .history-intro p:last-child {
       font-size: 17px;
     }
+
+    .mobile-nav { display: none; position: relative; }
+    .mobile-nav summary {
+      width: 44px;
+      height: 44px;
+      display: grid;
+      place-items: center;
+      list-style: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.72);
+      cursor: pointer;
+    }
+    .mobile-nav summary::-webkit-details-marker { display: none; }
+    .mobile-nav summary::after { display: none !important; content: none !important; }
+    .mobile-nav__icon,
+    .mobile-nav__icon::before,
+    .mobile-nav__icon::after {
+      width: 20px;
+      height: 2px;
+      display: block;
+      position: relative;
+      background: var(--red-dark);
+      transition: transform .2s ease, opacity .2s ease;
+    }
+    .mobile-nav__icon::before,
+    .mobile-nav__icon::after { content: ""; position: absolute; left: 0; }
+    .mobile-nav__icon::before { top: -6px; }
+    .mobile-nav__icon::after { top: 6px; }
+    .mobile-nav[open] .mobile-nav__icon { background: transparent; }
+    .mobile-nav[open] .mobile-nav__icon::before { top: 0; transform: rotate(45deg); }
+    .mobile-nav[open] .mobile-nav__icon::after { top: 0; transform: rotate(-45deg); }
+    .mobile-nav__panel {
+      width: min(290px, calc(100vw - 32px));
+      display: grid;
+      position: absolute;
+      top: calc(100% + 10px);
+      right: 0;
+      padding: 8px;
+      border: 1px solid var(--line);
+      background: #fffdf8;
+      box-shadow: 0 20px 48px rgba(42,20,10,.18);
+    }
+    .mobile-nav__panel a {
+      padding: 12px 13px;
+      border-bottom: 1px solid rgba(24,18,15,.09);
+      color: var(--ink);
+      font-size: 15px;
+      font-weight: 700;
+    }
+    .mobile-nav__panel a:last-child { border-bottom: 0; }
+    @media (max-width: 980px) {
+      .mobile-nav { display: block; }
+      .topbar { align-items: center; }
+    }
   </style>
 </head>
 <body>
@@ -1659,6 +1713,17 @@
       <a href="sostenerci.html">Concetto partner</a>
       <a href="contatti.html">Contatti</a>
     </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Apri il menu" title="Menu"><span class="mobile-nav__icon" aria-hidden="true"></span></summary>
+      <nav class="mobile-nav__panel" aria-label="Navigazione mobile">
+        <a href="index.html#chi-siamo">Chi siamo</a>
+        <a href="index.html#storia">Storia</a>
+        <a href="index.html#progetto-2030">Progetto 2030</a>
+        <a href="persone.html#comitato">Associazione</a>
+        <a href="sostenerci.html">Concetto partner</a>
+        <a href="contatti.html">Contatti</a>
+      </nav>
+    </details>
   </header>
 
   <main id="top">

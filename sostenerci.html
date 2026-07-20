@@ -1754,9 +1754,10 @@
       .sponsor-section__cta { display: none; }
     }
     body.route-support main { display: flex; flex-direction: column; }
-    body.route-support main > section:not(#pacchetti):not(#visibilita) { display: none; }
+    body.route-support main > section:not(#pacchetti):not(#visibilita):not(.partner-contact-cta) { display: none; }
     body.route-support #visibilita { order: 1; padding-top: 88px; }
     body.route-support #pacchetti { order: 2; }
+    body.route-support .partner-contact-cta { order: 3; }
     /* Sistema tipografico comune */
     h1, h2, h3, h4,
     .history-hero__subtitle,
@@ -1774,6 +1775,42 @@
       font-weight: 600;
       line-height: 1.32;
     }
+
+    .mobile-nav { display: none; position: relative; }
+    .mobile-nav summary { width: 44px; height: 44px; display: grid; place-items: center; list-style: none; border: 1px solid var(--line); background: rgba(255,255,255,.72); cursor: pointer; }
+    .mobile-nav summary::-webkit-details-marker { display: none; }
+    .mobile-nav summary::after { display: none !important; content: none !important; }
+    .mobile-nav__icon, .mobile-nav__icon::before, .mobile-nav__icon::after { width: 20px; height: 2px; display: block; position: relative; background: var(--red-dark); transition: transform .2s ease, opacity .2s ease; }
+    .mobile-nav__icon::before, .mobile-nav__icon::after { content: ""; position: absolute; left: 0; }
+    .mobile-nav__icon::before { top: -6px; }
+    .mobile-nav__icon::after { top: 6px; }
+    .mobile-nav[open] .mobile-nav__icon { background: transparent; }
+    .mobile-nav[open] .mobile-nav__icon::before { top: 0; transform: rotate(45deg); }
+    .mobile-nav[open] .mobile-nav__icon::after { top: 0; transform: rotate(-45deg); }
+    .mobile-nav__panel { width: min(290px, calc(100vw - 32px)); display: grid; position: absolute; top: calc(100% + 10px); right: 0; padding: 8px; border: 1px solid var(--line); background: #fffdf8; box-shadow: 0 20px 48px rgba(42,20,10,.18); }
+    .mobile-nav__panel a { padding: 12px 13px; border-bottom: 1px solid rgba(24,18,15,.09); color: var(--ink); font-size: 15px; font-weight: 700; }
+    .mobile-nav__panel a:last-child { border-bottom: 0; }
+    @media (max-width: 980px) { .mobile-nav { display: block; } .topbar { align-items: center; } }
+
+    .partner-contact-cta {
+      padding: clamp(64px, 8vw, 104px) 0;
+      color: white;
+      background: #506149;
+    }
+    .partner-contact-cta__inner {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 40px;
+      align-items: end;
+    }
+    .partner-contact-cta .eyebrow { color: #f0cf8e; }
+    .partner-contact-cta h2 { max-width: 760px; margin-bottom: 14px; font-size: clamp(34px, 4vw, 56px); }
+    .partner-contact-cta p:not(.eyebrow) { max-width: 720px; color: rgba(255,255,255,.82); font-size: 18px; }
+    .partner-contact-cta .btn { min-height: 54px; padding: 15px 24px; white-space: nowrap; }
+    @media (max-width: 760px) {
+      .partner-contact-cta__inner { grid-template-columns: 1fr; align-items: start; }
+      .partner-contact-cta .btn { width: 100%; }
+    }
   </style>
 </head>
 <body class="route-support">
@@ -1790,6 +1827,12 @@
       <a href="sostenerci.html">Concetto partner</a>
       <a href="contatti.html">Contatti</a>
     </nav>
+    <details class="mobile-nav">
+      <summary aria-label="Apri il menu" title="Menu"><span class="mobile-nav__icon" aria-hidden="true"></span></summary>
+      <nav class="mobile-nav__panel" aria-label="Navigazione mobile">
+        <a href="index.html#chi-siamo">Chi siamo</a><a href="index.html#storia">Storia</a><a href="index.html#progetto-2030">Progetto 2030</a><a href="persone.html#comitato">Associazione</a><a href="sostenerci.html">Concetto partner</a><a href="contatti.html">Contatti</a>
+      </nav>
+    </details>
   </header>
 
   <main id="top">
@@ -2360,30 +2403,14 @@
 
     </section>
 
-    <section id="contatto" class="reveal">
-      <div class="wrap split">
+    <section class="partner-contact-cta">
+      <div class="wrap partner-contact-cta__inner">
         <div>
-          <p class="eyebrow">Prossimo passo</p>
-          <h2>Entrare ora significa crescere insieme al progetto.</h2>
-          <p>La partnership ATLS non e solo un logo: e una storia territoriale, sportiva e culturale ancora in fase di crescita. Per le aziende e un momento favorevole per posizionarsi in modo forte, prima che la visibilita sponsor diventi satura.</p>
-          <div class="grid-3">
-            <article class="card">
-              <h3>Contatto ATLS</h3>
-              <p>info@lottasvizzera.ch<br>www.lottasvizzera.ch</p>
-            </article>
-            <article class="card">
-              <h3>Responsabile tecnico</h3>
-              <p>Robin Crotta<br>+41 77 419 29 81</p>
-            </article>
-            <article class="card">
-              <h3>Instagram</h3>
-              <p>@lottasvizzeraticino<br>Facebook in preparazione</p>
-            </article>
-          </div>
+          <p class="eyebrow">Costruiamo il prossimo passo</p>
+          <h2>Parliamo di una partnership adatta alla vostra realt&agrave;.</h2>
+          <p>Ogni collaborazione nasce da obiettivi condivisi. Contattateci per conoscere ATLS, visitare la nuova base di Sigirino e definire insieme la forma di sostegno pi&ugrave; coerente.</p>
         </div>
-        <figure class="wide-photo">
-          <img src="output/contatto-azione-16x9.jpg" alt="Lottatori ATLS in azione">
-        </figure>
+        <a class="btn light" href="contatti.html">Contattaci</a>
       </div>
     </section>
   </main>
