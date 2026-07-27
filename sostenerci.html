@@ -828,7 +828,7 @@
 
     .sponsor-packages {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 18px;
       align-items: stretch;
     }
@@ -1072,6 +1072,19 @@
       box-shadow: 0 24px 56px rgba(91, 96, 65, .16);
     }
 
+    .sponsor-card--representation {
+      border-color: rgba(180, 149, 86, .78);
+      background:
+        linear-gradient(135deg, rgba(255, 255, 255, .96), rgba(255, 255, 255, .22) 42%),
+        linear-gradient(160deg, #fff8e8 0%, #e9f0e3 100%);
+      box-shadow: 0 26px 62px rgba(91, 96, 65, .19);
+    }
+
+    .sponsor-card--representation::before {
+      height: 7px;
+      background: linear-gradient(90deg, #596b53, #b49556 55%, #e0c985);
+    }
+
     .sponsor-card__header { border-bottom-color: rgba(73, 83, 64, .18); }
     .sponsor-card__header {
       height: 126px;
@@ -1119,6 +1132,28 @@
     .sponsor-card__footer {
       color: #3c4536;
       background: rgba(var(--accent-rgb), .10);
+    }
+
+    .sponsor-card__term {
+      margin: -4px 0 0;
+      padding: 12px 14px;
+      border-left: 3px solid var(--accent);
+      color: #3c4536;
+      background: rgba(var(--accent-rgb), .08);
+      font-size: 13px;
+      font-weight: 850;
+      line-height: 1.45;
+    }
+
+    .sponsor-document-note {
+      margin-top: 22px;
+      padding: 18px 20px;
+      border: 1px solid rgba(102, 120, 94, .28);
+      border-radius: 8px;
+      color: #4d4841;
+      background: rgba(255, 255, 255, .68);
+      font-size: 14px;
+      line-height: 1.55;
     }
 
     .sponsor-comparison {
@@ -2192,12 +2227,72 @@
           <p class="eyebrow">La proposta ATLS</p>
           <h2>Pacchetti partner.</h2>
         </div>
-        <p>Tre forme di collaborazione, dal ruolo di partner principale al sostegno locale, pensate per costruire rapporti familiari e duraturi.</p>
+        <p>Quattro forme di collaborazione, dalla rappresentanza sui capi ufficiali al sostegno locale, pensate per costruire rapporti chiari e duraturi.</p>
       </div>
 
       <p class="wrap partner-manifesto">Cerchiamo partner con una forte identit&agrave; svizzera e territoriale, pronti a costruire con l'ATLS le basi per consolidare la lotta svizzera in Ticino. Una collaborazione che rafforza la nostra presenza e valorizza le aziende che condividono questo percorso.</p>
 
       <div class="wrap sponsor-packages" aria-label="Pacchetti partner ATLS">
+        <article class="sponsor-card sponsor-card--main sponsor-card--representation">
+          <header class="sponsor-card__header">
+            <div>
+              <p class="sponsor-card__label">Main Partner di rappresentanza</p>
+              <p class="sponsor-card__price"><strong>Da CHF 5&rsquo;000</strong><span>/ anno</span></p>
+            </div>
+            <div class="sponsor-card__icon" aria-hidden="true">&#9819;</div>
+          </header>
+          <p class="sponsor-card__badge">3 slot disponibili</p>
+          <p class="sponsor-card__copy">La presenza pi&ugrave; riconoscibile dell'ATLS, pensata per tre partner che ci rappresentano anche sui capi ufficiali.</p>
+          <p class="sponsor-card__term">Durata prevista: 5 anni, per garantire continuit&agrave; alla produzione e all'utilizzo dei capi ufficiali.</p>
+          <div class="sponsor-card__features">
+            <details>
+              <summary>Logo sui vestiti ufficiali ATLS</summary>
+              <p>Uno spazio logo di 30 cm&sup2; per ciascuno dei tre partner su giacca d'allenamento dei lottatori, softshell e polo ufficiale ATLS. La superficie complessiva di 90 cm&sup2;, il posizionamento e la produzione finale dei capi devono rispettare il regolamento ESV vigente.</p>
+            </details>
+            <details>
+              <summary>Unico nella tua categoria professionale</summary>
+              <p>Esclusivit&agrave; nella categoria professionale concordata, senza la presenza di concorrenti diretti nello stesso livello di partnership.</p>
+            </details>
+            <details>
+              <summary>Presenza premium sul sito web</summary>
+              <p>Logo, collegamento e descrizione aziendale in posizione prioritaria nella futura sezione partner del sito ATLS.</p>
+            </details>
+            <details>
+              <summary>Presenza sui materiali divulgativi</summary>
+              <p>Logo sui materiali dedicati alla divulgazione della lotta svizzera, alle giornate di prova e alle attivit&agrave; ATLS.</p>
+            </details>
+            <details>
+              <summary>Presenza nei post di riepilogo gare</summary>
+              <p>Menzione del partner nei contenuti che raccontano risultati, trasferte e momenti significativi della stagione sportiva.</p>
+            </details>
+            <details>
+              <summary>Post dedicato: sinergia tra partner e lotta svizzera</summary>
+              <p>Un contenuto dedicato per raccontare il legame tra il partner, i valori condivisi e lo sviluppo della lotta svizzera in Ticino.</p>
+            </details>
+            <details>
+              <summary>Stories social da concordare</summary>
+              <p>Stories dedicate o condivise durante allenamenti, gare, eventi e attivit&agrave; concordate con il partner.</p>
+            </details>
+            <details>
+              <summary>Coinvolgimento negli eventi</summary>
+              <p>Invito all'Assemblea generale e agli eventuali eventi organizzati da ATLS, secondo disponibilit&agrave; e modalit&agrave; dell'appuntamento.</p>
+            </details>
+            <details>
+              <summary>Immagine ATLS concordata</summary>
+              <p>Utilizzo concordato di immagini ATLS per la comunicazione aziendale, ad esempio sul sito, sui social media o nelle newsletter.</p>
+            </details>
+            <details>
+              <summary>Menzione premium nella palestra alla CMFG Arena</summary>
+              <p>Presenza visiva premium nel nuovo locale di lotta, con posizione e formato da concordare insieme al partner.</p>
+            </details>
+            <details>
+              <summary>Precedenza per eventi esclusivi di lotta svizzera</summary>
+              <p>Accesso prioritario alle opportunit&agrave; disponibili per eventi selezionati, feste di lotta e momenti esclusivi.</p>
+            </details>
+          </div>
+          <p class="sponsor-card__footer"><span aria-hidden="true">&#9819;</span>Rappresentiamo insieme la lotta svizzera in Ticino.</p>
+        </article>
+
         <article class="sponsor-card sponsor-card--main">
           <header class="sponsor-card__header">
             <div>
@@ -2208,6 +2303,7 @@
           </header>
           <p class="sponsor-card__badge">Massima visibilit&agrave;</p>
           <p class="sponsor-card__copy">Insieme affermiamo la lotta svizzera in Ticino e ne trasmettiamo i valori alle nuove generazioni.</p>
+          <p class="sponsor-card__term">Contratto annuale con rinnovo automatico, salvo disdetta secondo i termini concordati.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Unico nella tua categoria professionale</summary>
@@ -2256,13 +2352,14 @@
         <article class="sponsor-card sponsor-card--partner">
           <header class="sponsor-card__header">
             <div>
-              <p class="sponsor-card__label">Partner di categoria</p>
+              <p class="sponsor-card__label">Partner collaborazione</p>
               <p class="sponsor-card__price"><strong>Da CHF 2&rsquo;000</strong><span>/ anno</span></p>
             </div>
             <div class="sponsor-card__icon" aria-hidden="true">&#9670;</div>
           </header>
           <p class="sponsor-card__badge">Collaborazione</p>
           <p class="sponsor-card__copy">Rappresenta la tua categoria in Ticino e collabora allo sviluppo dello sport e del territorio.</p>
+          <p class="sponsor-card__term">Contratto annuale con rinnovo automatico, salvo disdetta secondo i termini concordati.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Unico nella tua categoria professionale</summary>
@@ -2310,6 +2407,7 @@
           </header>
           <p class="sponsor-card__badge">Sostegno</p>
           <p class="sponsor-card__copy">Sostieni la lotta svizzera in Ticino e la comunit&agrave; locale.</p>
+          <p class="sponsor-card__term">Contributo liberale senza contratto di sponsorizzazione.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Menzione sul sito web</summary>
@@ -2331,6 +2429,8 @@
           <p class="sponsor-card__footer"><span aria-hidden="true">&#9829;</span>Ideale per realt&agrave; locali che si identificano nei valori della lotta svizzera.</p>
         </article>
       </div>
+
+      <p class="wrap sponsor-document-note"><strong>Documentazione contabile.</strong> Per ogni sostegno ATLS rilascia un documento adeguato alla forma di collaborazione: fattura o conferma per le prestazioni di sponsoring, ricevuta per i contributi liberali. L'eventuale deducibilit&agrave; fiscale dipende dalla situazione del partner e dalla normativa applicabile e deve essere verificata con la propria fiduciaria.</p>
 
     </section>
 
