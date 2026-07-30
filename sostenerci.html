@@ -66,6 +66,11 @@
       mix-blend-mode: multiply;
     }
 
+    .brand span {
+      max-width: 280px;
+      line-height: 1.18;
+    }
+
     .nav {
       display: flex;
       align-items: center;
@@ -1134,17 +1139,6 @@
       background: rgba(var(--accent-rgb), .10);
     }
 
-    .sponsor-card__term {
-      margin: -4px 0 0;
-      padding: 12px 14px;
-      border-left: 3px solid var(--accent);
-      color: #3c4536;
-      background: rgba(var(--accent-rgb), .08);
-      font-size: 13px;
-      font-weight: 850;
-      line-height: 1.45;
-    }
-
     .sponsor-document-note {
       margin-top: 22px;
       padding: 18px 20px;
@@ -1790,8 +1784,8 @@
     }
     body.route-support main { display: flex; flex-direction: column; }
     body.route-support main > section:not(#pacchetti):not(#visibilita):not(.partner-contact-cta) { display: none; }
-    body.route-support #visibilita { order: 1; padding-top: 88px; }
-    body.route-support #pacchetti { order: 2; }
+    body.route-support #pacchetti { order: 1; padding-top: 88px; }
+    body.route-support #visibilita { order: 2; }
     body.route-support .partner-contact-cta { order: 3; }
     /* Sistema tipografico comune */
     h1, h2, h3, h4,
@@ -1852,7 +1846,7 @@
   <header class="topbar">
     <a class="brand" href="index.html" aria-label="Torna alla copertina">
       <img src="output/logo-atls.png" alt="Logo ATLS">
-      <span>Concetto Partner ATLS</span>
+      <span>Lotta Svizzera - Partner &amp; Collaborazioni</span>
     </a>
     <nav class="nav" aria-label="Navigazione">
       <a href="index.html#chi-siamo">Chi siamo</a>
@@ -2227,7 +2221,7 @@
           <p class="eyebrow">La proposta ATLS</p>
           <h2>Pacchetti partner.</h2>
         </div>
-        <p>Quattro forme di collaborazione, dalla rappresentanza sui capi ufficiali al sostegno locale, pensate per costruire rapporti chiari e duraturi.</p>
+        <p>Quattro forme di collaborazione, dalla presenza sui capi ufficiali al sostegno locale, pensate per costruire rapporti di fiducia e duraturi.</p>
       </div>
 
       <p class="wrap partner-manifesto">Cerchiamo partner con una forte identit&agrave; svizzera e territoriale, pronti a costruire con l'ATLS le basi per consolidare la lotta svizzera in Ticino. Una collaborazione che rafforza la nostra presenza e valorizza le aziende che condividono questo percorso.</p>
@@ -2236,14 +2230,13 @@
         <article class="sponsor-card sponsor-card--main sponsor-card--representation">
           <header class="sponsor-card__header">
             <div>
-              <p class="sponsor-card__label">Main Partner di rappresentanza</p>
+              <p class="sponsor-card__label">Main Partner</p>
               <p class="sponsor-card__price"><strong>Da CHF 5&rsquo;000</strong><span>/ anno</span></p>
             </div>
             <div class="sponsor-card__icon" aria-hidden="true">&#9819;</div>
           </header>
           <p class="sponsor-card__badge">3 slot disponibili</p>
           <p class="sponsor-card__copy">La presenza pi&ugrave; riconoscibile dell'ATLS, pensata per tre partner che ci rappresentano anche sui capi ufficiali.</p>
-          <p class="sponsor-card__term">Durata prevista: 5 anni, per garantire continuit&agrave; alla produzione e all'utilizzo dei capi ufficiali.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Logo sui vestiti ufficiali ATLS</summary>
@@ -2296,14 +2289,13 @@
         <article class="sponsor-card sponsor-card--main">
           <header class="sponsor-card__header">
             <div>
-              <p class="sponsor-card__label">Main Partner</p>
+              <p class="sponsor-card__label">Partner da gara</p>
               <p class="sponsor-card__price"><strong>Da CHF 5&rsquo;000</strong><span>/ anno</span></p>
             </div>
             <div class="sponsor-card__icon" aria-hidden="true">&#9733;</div>
           </header>
-          <p class="sponsor-card__badge">Massima visibilit&agrave;</p>
+          <p class="sponsor-card__badge">Solo 3 partner</p>
           <p class="sponsor-card__copy">Insieme affermiamo la lotta svizzera in Ticino e ne trasmettiamo i valori alle nuove generazioni.</p>
-          <p class="sponsor-card__term">Contratto annuale con rinnovo automatico, salvo disdetta secondo i termini concordati.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Unico nella tua categoria professionale</summary>
@@ -2359,7 +2351,6 @@
           </header>
           <p class="sponsor-card__badge">Collaborazione</p>
           <p class="sponsor-card__copy">Rappresenta la tua categoria in Ticino e collabora allo sviluppo dello sport e del territorio.</p>
-          <p class="sponsor-card__term">Contratto annuale con rinnovo automatico, salvo disdetta secondo i termini concordati.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Unico nella tua categoria professionale</summary>
@@ -2407,7 +2398,6 @@
           </header>
           <p class="sponsor-card__badge">Sostegno</p>
           <p class="sponsor-card__copy">Sostieni la lotta svizzera in Ticino e la comunit&agrave; locale.</p>
-          <p class="sponsor-card__term">Contributo liberale senza contratto di sponsorizzazione.</p>
           <div class="sponsor-card__features">
             <details>
               <summary>Menzione sul sito web</summary>
@@ -2508,7 +2498,7 @@
         <div>
           <p class="eyebrow">Costruiamo il prossimo passo</p>
           <h2>Parliamo di una partnership adatta alla vostra realt&agrave;.</h2>
-          <p>Ogni collaborazione nasce da obiettivi condivisi. Contattateci per conoscere ATLS, visitare la nuova base di Sigirino e definire insieme la forma di sostegno pi&ugrave; coerente.</p>
+          <p>Ogni collaborazione nasce da obiettivi condivisi. Contattateci per conoscere ATLS, visitare la nuova base di Sigirino e definire insieme la forma di sostegno che pi&ugrave; si avvicina alle vostre esigenze.</p>
         </div>
         <a class="btn light" href="contatti.html">Contattaci</a>
       </div>
@@ -2518,8 +2508,8 @@
   <footer>
     <div class="wrap">
       <div>
-        <strong>Concetto Partner ATLS</strong>
-        <p>Versione 20.07.2026</p>
+        <strong>Lotta Svizzera - Partner &amp; Collaborazioni</strong>
+        <p>Versione 30.07.2026</p>
       </div>
       <p>Boris Baroni &amp; Robin Crotta</p>
     </div>
