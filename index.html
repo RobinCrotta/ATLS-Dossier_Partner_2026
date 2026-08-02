@@ -1498,10 +1498,9 @@
     .history-intro p:last-child { max-width: 720px; font-size: 18px; }
     .history-timeline { margin-top: 0; }
     .history-timeline::before { top: 47px; left: 4%; right: 4%; background: linear-gradient(90deg, rgba(113,17,15,.22), var(--red-dark) 72%, #66785e); }
-    .history-timeline__list { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+    .history-timeline__list { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 16px; }
     .history-timeline__item { display: block; padding-top: 76px; position: relative; }
     .history-timeline__item::before { content: ""; position: absolute; top: 37px; left: 18px; width: 18px; height: 18px; border: 5px solid #fff9ef; border-radius: 50%; background: var(--red-dark); box-shadow: 0 0 0 2px var(--red-dark); z-index: 2; }
-    .history-timeline__item:nth-child(5) { display: none; }
     .history-timeline__year {
       position: absolute;
       top: 0;
@@ -1511,10 +1510,12 @@
       font-size: 14px;
       letter-spacing: .06em;
     }
-    .history-timeline__card { min-height: 590px; border-radius: 8px; }
+    .history-timeline__card { min-height: 610px; border-radius: 8px; }
     .history-timeline__body { padding: 22px; }
     .history-timeline__card figure { display: block; margin-top: auto; border-top: 1px solid rgba(24,18,15,.10); }
     .history-timeline__image { height: 210px; aspect-ratio: auto; }
+    .history-timeline__image--pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2px; }
+    .history-timeline__image--pair img { min-width: 0; }
     .history-timeline__caption { min-height: 50px; padding: 10px 14px 13px; background: rgba(255,255,255,.72); }
     .history-timeline__item--future .history-timeline__card {
       border: 1px solid rgba(102,120,94,.48);
@@ -1796,93 +1797,90 @@
       <div class="wrap history-timeline" aria-label="Timeline della storia e del futuro ATLS">
         <div class="history-timeline__list">
           <article class="history-timeline__item">
-            <span class="history-timeline__year">2009-2011</span>
+            <span class="history-timeline__year">2009-21.09.2011</span>
             <div class="history-timeline__icon" aria-hidden="true">01</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <h3 class="history-timeline__title">Prime prove al CST Tenero</h3>
-                <p class="history-timeline__text">Le prime lezioni a Sportissima accendono l'interesse. In inverno si lavora in piccoli garage non riscaldati: condizioni semplici, ma tanta volont&agrave;.</p>
+                <h3 class="history-timeline__title">Da Sportissima al primo allenamento</h3>
+                <p class="history-timeline__text">Le dimostrazioni di Sportissima del 2009, 2010 e 2011 accendono l'interesse. Il 21 settembre 2011, dalle 17:00 alle 18:30, si svolge al CST Tenero il primo allenamento del gruppo che dar&agrave; vita ad ATLS.</p>
               </div>
-              <!-- TIMELINE PHOTO: CST / GARAGE -->
               <figure>
-                <div class="history-timeline__image">
-                  <img src="output/history-locale-invernale-2012.jpg" alt="Primo spazio invernale usato da ATLS per allenarsi">
+                <div class="history-timeline__image history-timeline__image--pair">
+                  <img src="output/history-sportissima-2009.jpg" alt="Dimostrazione di lotta svizzera a Sportissima nel 2009">
+                  <img src="output/history-primo-allenamento-2011.jpg" alt="Gruppo del primo allenamento ATLS al CST Tenero nel 2011">
                 </div>
-                <figcaption class="history-timeline__caption">Primi allenamenti invernali.</figcaption>
+                <figcaption class="history-timeline__caption">Dalle prime dimostrazioni al primo gruppo di allenamento.</figcaption>
               </figure>
             </div>
           </article>
 
           <article class="history-timeline__item">
-            <span class="history-timeline__year">2012</span>
+            <span class="history-timeline__year">23.04-13.08.2012</span>
             <div class="history-timeline__icon" aria-hidden="true">02</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <h3 class="history-timeline__title">Fondazione ATLS</h3>
-                <p class="history-timeline__text">Il 13 agosto nasce ufficialmente l'Associazione Ticinese Lotta Svizzera. Edi Ritter viene nominato primo presidente.</p>
+                <h3 class="history-timeline__title">Prime gare e fondazione ATLS</h3>
+                <p class="history-timeline__text">Il 23 aprile Alessio Crotta, Elia H&auml;ssig e Robin Crotta partecipano alla prima festa su invito ad Attinghausen, dove Robin conquista il primo rametto di quercia. Il 13 agosto nasce ufficialmente ATLS, con Edi Ritter primo presidente.</p>
               </div>
-              <!-- TIMELINE PHOTO: FONDAZIONE -->
               <figure>
                 <div class="history-timeline__image">
-                  <img src="output/history-edi-ritter.jpg" alt="Edi Ritter con la bandiera ATLS">
+                  <img src="output/history-prima-gara-2012.jpg" alt="I primi giovani ATLS alla festa di lotta di Attinghausen nel 2012">
                 </div>
-                <figcaption class="history-timeline__caption">Edi Ritter con la bandiera ATLS.</figcaption>
+                <figcaption class="history-timeline__caption">Attinghausen 2012: la prima partecipazione a una festa di lotta.</figcaption>
               </figure>
             </div>
           </article>
 
           <article class="history-timeline__item">
-            <span class="history-timeline__year">2022 e 2025</span>
+            <span class="history-timeline__year">2014-2019</span>
             <div class="history-timeline__icon" aria-hidden="true">03</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
-                <h3 class="history-timeline__title">Prima e seconda Festa Cantonale</h3>
-                <p class="history-timeline__text">Cadenazzo 2022 apre una nuova fase. Biasca 2025 conferma la crescita con circa 5000 spettatori, 200 lottatori e 8 ore di diretta RSI.</p>
+                <h3 class="history-timeline__title">La lotta incontra il territorio</h3>
+                <p class="history-timeline__text">Dalla festa del 1&deg; agosto 2014 a Tenero agli eventi di Lugano, Gudo e Vezia, ATLS porta la lotta svizzera tra famiglie e comunit&agrave;. Nel 2019 i Giochi tradizionali svizzeri a Vezia riuniscono circa 150 lottatori e 5'000 spettatori.</p>
               </div>
-              <!-- TIMELINE PHOTO: FESTE CANTONALI -->
               <figure>
                 <div class="history-timeline__image">
-                  <img src="output/history-biasca-2025.jpg" alt="Seconda Festa Cantonale Ticinese a Biasca nel 2025">
+                  <img src="output/history-vezia-2019.jpg" alt="Giochi tradizionali svizzeri a Vezia nel 2019">
                 </div>
-                <figcaption class="history-timeline__caption">Biasca 2025: il movimento cresce e coinvolge tutto il Cantone.</figcaption>
+                <figcaption class="history-timeline__caption">Vezia 2019: sport, tradizione e territorio si incontrano.</figcaption>
+              </figure>
+            </div>
+          </article>
+
+          <article class="history-timeline__item">
+            <span class="history-timeline__year">17.09.2022-20.09.2025</span>
+            <div class="history-timeline__icon" aria-hidden="true">04</div>
+            <div class="history-timeline__card">
+              <div class="history-timeline__body">
+                <h3 class="history-timeline__title">Le prime due Feste Cantonali Ticinesi</h3>
+                <p class="history-timeline__text">La prima Cantonale di Cadenazzo nel 2022 accoglie circa 200 lottatori e 3'500 spettatori. La seconda, a Biasca nel 2025, porta nel Cantone circa 200 lottatori, 4'500 spettatori e una giornata di copertura televisiva.</p>
+              </div>
+              <figure>
+                <div class="history-timeline__image history-timeline__image--pair">
+                  <img src="output/history-cadenazzo-2022.jpg" alt="Prima Festa Cantonale Ticinese a Cadenazzo nel 2022">
+                  <img src="output/history-biasca-2025-doc.jpg" alt="Produzione televisiva alla seconda Festa Cantonale Ticinese di Biasca nel 2025">
+                </div>
+                <figcaption class="history-timeline__caption">Cadenazzo 2022 e Biasca 2025: due tappe decisive.</figcaption>
               </figure>
             </div>
           </article>
 
           <article class="history-timeline__item history-timeline__item--future">
-            <span class="history-timeline__year">2026-2030 · Il futuro</span>
-            <div class="history-timeline__icon" aria-hidden="true">04</div>
+            <span class="history-timeline__year">2026-2030 &middot; Il futuro</span>
+            <div class="history-timeline__icon" aria-hidden="true">05</div>
             <div class="history-timeline__card">
               <div class="history-timeline__body">
                 <h3 class="history-timeline__title">Affermare la lotta svizzera in Ticino</h3>
                 <p class="history-timeline__text">La nuova fase ATLS unisce infrastruttura, cultura, eventi e giovani in un progetto comune.</p>
                 <ul class="future-points"><li>Nuova palestra</li><li>Settore giovanile</li><li>Divulgazione culturale</li><li>Feste di lotta</li></ul>
-                <p><a class="timeline-link" href="#progetto-2030">Scopri cosa faremo →</a></p>
+                <p><a class="timeline-link" href="#progetto-2030">Scopri cosa faremo &rarr;</a></p>
               </div>
-              <!-- TIMELINE PHOTO: PROGETTO 2030 -->
               <figure>
                 <div class="history-timeline__image">
                   <img src="output/foto-palestra-nuova-sigirino.jpg" alt="Nuova palestra ATLS a Sigirino">
                 </div>
                 <figcaption class="history-timeline__caption">La nuova base ATLS a Sigirino apre il prossimo capitolo.</figcaption>
-              </figure>
-            </div>
-          </article>
-
-          <article class="history-timeline__item">
-            <div class="history-timeline__icon" aria-hidden="true">05</div>
-            <div class="history-timeline__card">
-              <div class="history-timeline__body">
-                <span class="history-timeline__year">2025</span>
-                <h3 class="history-timeline__title">Seconda Festa Cantonale a Biasca</h3>
-                <p class="history-timeline__text">Nel 2025 ATLS organizza la seconda Festa Cantonale a Biasca, confermando la crescita del movimento e la sua importanza nel panorama della lotta svizzera in Ticino.</p>
-              </div>
-              <!-- TIMELINE PHOTO: BIASCA 2025 -->
-              <figure>
-                <div class="history-timeline__image">
-                  <img src="output/history-biasca-2025.jpg" alt="Seconda Festa Cantonale Ticinese a Biasca nel 2025">
-                </div>
-                <figcaption class="history-timeline__caption">Biasca 2025: il movimento cresce e si conferma.</figcaption>
               </figure>
             </div>
           </article>
